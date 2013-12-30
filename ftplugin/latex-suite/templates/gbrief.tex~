@@ -1,0 +1,69 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+\def\filedate{\today}
+#\def\fileversion{4.0.2}
+
+\documentclass[11pt,ngerman,latin9]{g-brief}
+\usepackage[utf8]{inputenc}
+
+\lochermarke
+\faltmarken
+\fenstermarken
+\trennlinien
+%% \klassisch
+
+\Name                {Ohle Claussen}
+\Strasse             {Am Kahlschlag 17}
+\Zusatz              {}
+\RetourAdresse       {}
+\Ort                 {D-13465 Berlin}
+\Land                {}
+
+\Telefon             {(0\,30)\ 60\,95\,68\,68}
+\Telefax             {}
+\Telex               {}
+\HTTP                {}
+\EMail               {joclaussen@gmail.com}
+
+\Bank                {DKB Berlin}
+\BLZ                 {120\,300\,00}
+\Konto               {121\,54\,183}
+
+\Unterschrift        {Ohle Claussen}
+
+%\Postvermerk         {E I N S C H R E I B E N}
+\Adresse             {<+Frau+>\\
+<+Else Mittellos+>\\
+<+Finsterweg 12+>\\
+\\
+<+D-93456 Tiefeschlucht+>
+}
+
+\Betreff             {<+Zahlung Ihrer Miete+>}
+
+\Datum               {\today}
+\IhrZeichen          {}
+\IhrSchreiben        {}
+%\MeinZeichen         {OC}
+
+\Anrede              {<+Sehr geehrte Frau Mittellos,+>}
+\Gruss               {<+Mit freundlichen Gr\"u\ss{}en+>}{1cm}
+
+\Anlagen             {}
+\Verteiler           {}
+
+\begin{document}
+\begin{g-brief}
+
+<+bla+>
+
+\end{g-brief}
+\end{document}
+
+
+\endinput
+%%
+%% End of file `beispiel.tex'.

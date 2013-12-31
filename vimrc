@@ -145,3 +145,8 @@ au BufEnter *.hs compiler ghc
 filetype plugin indent on
 
 execute pathogen#infect()
+
+let g:syntastic_c_checkers = ['gcc']
+
+let g:filetype_c="c"
+let g:filetype_cpp="cpp"

@@ -23,45 +23,20 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
+"keep backups
+set backup		" keep a backup file
+set backupdir=~/.vim/backupfiles
+
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set textwidth=78
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-
-" if &term =~ "xterm"
-"	 if has ("terminfo")
-"		 set t_Co=8
-"		 set t_Sf=[3%p1%dm
-"		 set t_Sb=[4%p1%dm
-"	else
-"		set t_Co=8
-"		set t_Sf=[3%dm
-"		set t_Sb=[4%dm
-"	endif
-"endif
-
-  syntax on
-  set hlsearch
-  nmap <silent> <C-N> :silent noh<CR>
+syntax on     " syntax highlighting
+set hlsearch  " search highlighting
+"C-N to clear search highlighting
+nmap <silent> <C-N> :silent noh<CR> 
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -97,40 +72,27 @@ endif " has("autocmd")
 
 set grepprg=grep\ -nH\ $*
 
- " Build ctags database recursively
- map <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
- map <F11> :TlistToggle<CR>
-
- let Tlist_WinWidth=50
-
 " Tab-completion for filenames bash-style
 set wildmode=longest,list
 
+" Tab policy: 2 spaces, always expand to spaces
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-autocmd BufNewFile,BufRead COMMIT_EDITMSG set filetype=gitcommit
 
-"Surface evolver filetypes
-autocmd BufRead,BufNewFile *.fe set filetype=evolver
-au! Syntax evolver source ~/.vim/syntax/evolver.vim
-
-"if has("gui_running") 
-"	colorscheme darkspectrum
-"endif
-
+" always change current dir to dir of currently edited file
 set autochdir
 
-let g:tex_flavor='latex'
-
-set thesaurus+=/home/ohle/.vim/mthesaur.txt
+" thesaurus and dictionary
+set thesaurus+=~/.vim/mthesaur.txt
 set dictionary+=/usr/share/dict/words
 set noinfercase
 set ignorecase
 set smartcase
 "set iskeyword+=32,-
-" Activate skim
+
+" Activate skim for pdfsync
 map ,v :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
 map ,p :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
 map ,m :w<CR>:silent !make <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
@@ -138,15 +100,6 @@ map ,m :w<CR>:silent !make <CR>:silent !/Applications/Skim.app/Contents/SharedSu
 map ,r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
 map ,t :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
 
-"Haskell stuff
-au BufEnter *.hs compiler ghc
-:let g:haddock_browser="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-:let g:haddock_docdir="/usr/local/share/doc/ghc/html/"
 filetype plugin indent on
 
 execute pathogen#infect()
-
-let g:syntastic_c_checkers = ['gcc']
-
-let g:filetype_c="c"
-let g:filetype_cpp="cpp"

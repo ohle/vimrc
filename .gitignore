@@ -1,1 +1,4 @@
 backupfiles/*
+.netrwhist
+.DS_Store
+*~

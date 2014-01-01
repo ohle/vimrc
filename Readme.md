@@ -41,3 +41,5 @@ $ git submodule foreach git pull origin master
 Basic configuration happens in `vimrc`.
 GUI stuff is configured in `gvimrc-${OS}`.
 filetype-specific configuration should be put in `ftplugin/filetype.vim`
+Plugins should be configured by creating a file according to the scheme
+`bundle/pluginname-options/plugin/pluginnamerc.vim`.

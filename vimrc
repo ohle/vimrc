@@ -1,13 +1,13 @@
 " An example for a vimrc file.
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2002 Sep 19
+" Maintainer: Bram Moolenaar <Bram@vim.org>
+" Last change:  2002 Sep 19
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
+"       for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+"     for OpenVMS:  sys$login:.vimrc
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -24,17 +24,20 @@ set nocompatible
 set backspace=indent,eol,start
 
 "keep backups
-set backup		" keep a backup file
+set backup    " keep a backup file
 set backupdir=~/.vim/backupfiles
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50    " keep 50 lines of command line history
+set ruler         " show the cursor position all the time
+set scrolloff=1   " keep a line above/below when scrolling
+set showcmd       " display incomplete commands
+set wildmenu      " completion in window
+set wildmode=longest,list,full " Tab-completion for filenames bash-style
 set textwidth=78
 
-syntax on     " syntax highlighting
-set hlsearch  " search highlighting
+syntax on       " syntax highlighting
+set incsearch   " do incremental searching
+set hlsearch    " search highlighting
 "C-N to clear search highlighting
 nmap <silent> <C-N> :silent noh<CR> 
 
@@ -65,15 +68,14 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent    " always set autoindenting on
 
 endif " has("autocmd")
 
 
 set grepprg=grep\ -nH\ $*
 
-" Tab-completion for filenames bash-style
-set wildmode=longest,list
+
 
 " Tab policy: 2 spaces, always expand to spaces
 set tabstop=2

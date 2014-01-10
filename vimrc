@@ -102,6 +102,9 @@ map ,m :w<CR>:silent !make <CR>:silent !/Applications/Skim.app/Contents/SharedSu
 map ,r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
 map ,t :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
 
+" open URLs in chrome via <C-L>
+nmap <C-L> yiW:!google-chrome <c-r>"&<cr>
+
 filetype plugin indent on
 
 execute pathogen#infect()

@@ -28,3 +28,6 @@
 [submodule "bundle/statline"]
 	path = bundle/statline
 	url = https://github.com/scrooloose/vim-statline.git
+[submodule "bundle/vinegar"]
+	path = bundle/vinegar
+	url = https://github.com/tpope/vim-vinegar.git

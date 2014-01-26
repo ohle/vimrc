@@ -36,6 +36,7 @@ set wildmode=longest,list,full " Tab-completion for filenames bash-style
 set textwidth=78
 
 syntax on       " syntax highlighting
+set background=dark
 set incsearch   " do incremental searching
 set hlsearch    " search highlighting
 "C-N to clear search highlighting
@@ -103,8 +104,14 @@ map ,r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline 
 map ,t :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
 
 " open URLs in chrome via <C-L>
-nmap <C-L> yiW:!google-chrome <c-r>"&<cr>
+if has("mac")
+  nmap <C-L> yiW:!open <c-r>"&<cr>
+else
+  nmap <C-L> yiW:!google-chrome <c-r>"&<cr>
+endif
 
 filetype plugin indent on
 
 execute pathogen#infect()
+
+colorscheme solarized

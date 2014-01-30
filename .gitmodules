@@ -40,9 +40,3 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "android-dev.vim"]
-	path = android-dev.vim
-	url = https://github.com/jalcine/android-dev.vim.git
-[submodule "bundle/android-dev"]
-	path = bundle/android-dev
-	url = https://github.com/jalcine/android-dev.vim.git

@@ -116,3 +116,5 @@ execute pathogen#infect()
 
 let g:solarized_termcolors=256
 colorscheme solarized
+
+let mapleader = ","

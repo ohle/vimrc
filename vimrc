@@ -26,6 +26,8 @@ set backspace=indent,eol,start
 "keep backups
 set backup    " keep a backup file
 set backupdir=~/.vim/backupfiles
+" directory for swap files (default has highest priority for '.')
+set dir=~/tmp,/var/tmp,/tmp/,.
 
 set history=50    " keep 50 lines of command line history
 set ruler         " show the cursor position all the time
@@ -118,3 +120,7 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 let mapleader = ","
+
+" whitespace display
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+nnoremap <leader>w :set list!<cr>

@@ -124,3 +124,6 @@ let mapleader = ","
 " whitespace display
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 nnoremap <leader>w :set list!<cr>
+
+" search upwards in directory hierarchu for ctags-file
+set tags=tags;/

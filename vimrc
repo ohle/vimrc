@@ -1,4 +1,5 @@
 " An example for a vimrc file.
+" vim:foldmethod=marker
 "
 " Maintainer: Bram Moolenaar <Bram@vim.org>
 " Last change:  2002 Sep 19
@@ -119,11 +120,40 @@ execute pathogen#infect()
 let g:solarized_termcolors=256
 colorscheme solarized
 
-let mapleader = ","
+" search upwards in directory hierarchu for ctags-file
+set tags=tags;/
 
 " whitespace display
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" MAPPINGS {{{
+let mapleader = ","
+
+" whitespace display
 nnoremap <leader>w :set list!<cr>
 
-" search upwards in directory hierarchu for ctags-file
-set tags=tags;/
+" line number display
+nnoremap <leader>n :set number!<cr>
+
+" open previous buffer in vertical split
+nnoremap <leader>sp :execute "rightbelow vsplit " . bufname('#')<cr>
+
+" open current buffer in a new tab
+nnoremap <leader>tt :execute 
+
+nnoremap <leader>q :call QuickFixToggle()<cr>
+" quickfix toggle helper function {{{
+let g:quickfix_is_open = 0
+function! QuickFixToggle()
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open = 0
+    execute g:quickfix_return_to_window . "wincmd w"
+  else
+    let g:quickfix_return_to_window = winnr()
+    copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
+"}}}
+" }}}

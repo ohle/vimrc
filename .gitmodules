@@ -46,3 +46,6 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/corntrace/bufexplorer.git
+[submodule "bundle/zoomwin"]
+	path = bundle/zoomwin
+	url = https://github.com/vim-scripts/ZoomWin

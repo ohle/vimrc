@@ -141,6 +141,10 @@ nnoremap <leader>sp :execute "rightbelow vsplit " . bufname('#')<cr>
 " open current buffer in a new tab
 nnoremap <leader>tt :execute 
 
+" user arrow keys for line-by-line scrolling
+noremap <up> <c-e>
+noremap <down> <c-y>
+
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{
 let g:quickfix_is_open = 0

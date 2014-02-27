@@ -120,8 +120,28 @@ execute pathogen#infect()
 let g:solarized_termcolors=256
 colorscheme solarized
 
-" search upwards in directory hierarchu for ctags-file
-set tags=tags;/
+" tagfile handling
+" tagfiles are called "tags" and are found by searching upwards from the
+" current file's dir.
+" Some filetypes get an autocommand to update the tagsfile in the background {{{
+set tags=tags;
+function UpdateTagsFile()
+  let tagfile = findfile("tags", ";")
+  if (strlen(tagfile) == 0)
+    return
+  endif
+  let prefix = ""
+  if (strpart(tagfile,0,1) ==# "/")
+    let prefix="/"
+  endif
+  let tagpathcomponents = split(tagfile, "/")
+  call remove(tagpathcomponents, -1)
+  let tagpath = prefix . join(tagpathcomponents, "/")
+  call system("cd " . tagpath . " && ctags -R -f tags.new . && mv tags.new tags &")
+endfunction
+
+autocmd FileType {c,cpp,js,java,groovy,perl,scala} autocmd BufWritePost <buffer> call UpdateTagsFile()
+"}}}
 
 " whitespace display
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<

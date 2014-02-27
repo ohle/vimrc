@@ -142,8 +142,8 @@ nnoremap <leader>sp :execute "rightbelow vsplit " . bufname('#')<cr>
 nnoremap <leader>tt :execute 
 
 " user arrow keys for line-by-line scrolling
-noremap <up> <c-e>
-noremap <down> <c-y>
+noremap <down> <c-e>
+noremap <up> <c-y>
 
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{

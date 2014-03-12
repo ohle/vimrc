@@ -2,3 +2,5 @@ colorscheme solarized
 set background=dark
 set guifont=Terminus\ Medium:h12
 set noantialias
+set guioptions=acegimrLtT
+set toolbariconsize=tiny

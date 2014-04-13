@@ -1,5 +1,5 @@
-" quickfix options for ant and javac
-set makeprg=ant\ -emacs\ -q\ -find\ build.xml
-set efm=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+" quickfix options for ant and groovyc
+set makeprg=ant\ -emacs\ -find\ build.xml
+set efm=%f:\ %l:\ %m
 set autoindent
 set smartindent

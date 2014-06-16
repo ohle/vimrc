@@ -140,7 +140,7 @@ function UpdateTagsFile()
   call system("cd " . tagpath . " && ctags -R -f tags.new . && mv tags.new tags &")
 endfunction
 
-autocmd FileType {c,cpp,js,java,groovy,perl,scala} autocmd BufWritePost <buffer> call UpdateTagsFile()
+"autocmd FileType {c,cpp,js,java,groovy,perl,scala} autocmd BufWritePost <buffer> call UpdateTagsFile()
 "}}}
 
 " whitespace display

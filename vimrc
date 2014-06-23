@@ -120,6 +120,9 @@ execute pathogen#infect()
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" Enable mouse in terminal mode (for resizing splits etc.)
+set mouse=a
+
 " tagfile handling
 " tagfiles are called "tags" and are found by searching upwards from the
 " current file's dir.

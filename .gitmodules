@@ -55,3 +55,6 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/scaladoc"]
+	path = bundle/scaladoc
+	url = git://github.com/mdreves/vim-scaladoc.git

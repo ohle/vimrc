@@ -123,6 +123,12 @@ colorscheme solarized
 " Enable mouse in terminal mode (for resizing splits etc.)
 set mouse=a
 
+" persistent undo
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 " tagfile handling
 " tagfiles are called "tags" and are found by searching upwards from the
 " current file's dir.

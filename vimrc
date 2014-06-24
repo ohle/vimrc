@@ -175,6 +175,10 @@ nnoremap <leader>tt :execute
 noremap <down> <c-e>
 noremap <up> <c-y>
 
+" stupid shift key
+nnoremap ; :
+nnoremap : ;
+
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{
 let g:quickfix_is_open = 0

@@ -117,7 +117,7 @@ filetype plugin indent on
 
 execute pathogen#infect()
 
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 colorscheme solarized
 
 " Enable mouse in terminal mode (for resizing splits etc.)

@@ -17,6 +17,7 @@ endif
 
 set sm "showmatch (Klammern)
 set aw "autowrite
+set ar "autoread a changed file
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible

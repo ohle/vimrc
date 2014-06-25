@@ -44,7 +44,7 @@ set background=dark
 set incsearch   " do incremental searching
 set hlsearch    " search highlighting
 "C-N to clear search highlighting
-nmap <silent> <C-N> :silent noh<CR> 
+nnoremap <silent> <C-N> :silent noh<CR>
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -109,9 +109,9 @@ map ,t :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:sil
 
 " open URLs in chrome via <C-L>
 if has("mac")
-  nmap <C-L> yiW:!open <c-r>"&<cr>
+  nnoremap <C-L> yiW:!open <c-r>"&<cr>
 else
-  nmap <C-L> yiW:!google-chrome <c-r>"&<cr>
+  nnoremap <C-L> yiW:!google-chrome <c-r>"&<cr>
 endif
 
 filetype plugin indent on

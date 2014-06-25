@@ -58,3 +58,6 @@
 [submodule "bundle/scaladoc"]
 	path = bundle/scaladoc
 	url = git://github.com/mdreves/vim-scaladoc.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = https://github.com/tpope/vim-repeat

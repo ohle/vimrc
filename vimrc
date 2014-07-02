@@ -156,6 +156,9 @@ endfunction
 " whitespace display
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
+" marker for wrapped lines
+let &showbreak="↪ "
+
 " MAPPINGS {{{
 let mapleader = ","
 

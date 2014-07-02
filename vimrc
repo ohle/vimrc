@@ -179,6 +179,8 @@ noremap <up> <c-y>
 nnoremap ; :
 nnoremap : ;
 
+inoremap jk <Esc>
+
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{
 let g:quickfix_is_open = 0

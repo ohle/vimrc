@@ -1,4 +1,4 @@
-nnoremap <c-o> :TagbarToggle<cr>
+nnoremap <leader>t :TagbarToggle<cr>
 
 let g:tagbar_type_groovy = {
       \ 'ctagstype' : 'groovy',

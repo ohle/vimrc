@@ -89,7 +89,7 @@ set softtabstop=2
 set expandtab
 
 " always change current dir to dir of currently edited file
-set autochdir
+" set autochdir
 
 " thesaurus and dictionary
 set thesaurus+=~/.vim/mthesaur.txt
@@ -134,9 +134,9 @@ set undoreload=10000
 " tagfiles are called "tags" and are found by searching upwards from the
 " current file's dir.
 " Some filetypes get an autocommand to update the tagsfile in the background {{{
-set tags=tags;
+" set tags=tags;
 function UpdateTagsFile()
-  let tagfile = findfile("tags", ";")
+  let tagfile = &tags
   if (strlen(tagfile) == 0)
     return
   endif
@@ -150,6 +150,7 @@ function UpdateTagsFile()
   call system("cd " . tagpath . " && ctags -R -f tags.new . && mv tags.new tags &")
 endfunction
 
+nnoremap <leader>t call UpdateTagsFile()
 "autocmd FileType {c,cpp,js,java,groovy,perl,scala} autocmd BufWritePost <buffer> call UpdateTagsFile()
 "}}}
 

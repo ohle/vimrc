@@ -175,6 +175,12 @@ nnoremap <leader>sp :execute "rightbelow vsplit " . bufname('#')<cr>
 " open current buffer in a new tab
 nnoremap <leader>tt :execute 
 
+" align current paragraph
+nnoremap <leader>a mm=ip`m
+
+" instant replay
+nnoremap Q @q
+
 " user arrow keys for line-by-line scrolling
 noremap <down> <c-e>
 noremap <up> <c-y>

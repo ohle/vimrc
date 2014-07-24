@@ -163,11 +163,14 @@ let &showbreak="↪ "
 " MAPPINGS {{{
 let mapleader = ","
 
+" Make Y behave like D and C
+noremap Y y$
+
 " whitespace display
 nnoremap <leader>w :set list!<cr>
 
 " line number display
-nnoremap <leader>n :set number!<cr>
+nnoremap <leader>n :set number!\|:set relativenumber!<cr>
 
 " open previous buffer in vertical split
 nnoremap <leader>sp :execute "rightbelow vsplit " . bufname('#')<cr>
@@ -186,10 +189,18 @@ noremap <down> <c-e>
 noremap <up> <c-y>
 
 " stupid shift key
-nnoremap ; :
-nnoremap : ;
+noremap ; :
+noremap : ;
 
+" mash jk to leave insert mode
 inoremap jk <Esc>
+inoremap JK <Esc>
+inoremap Jk <Esc>
+inoremap jK <Esc>
+inoremap kj <Esc>
+inoremap KJ <Esc>
+inoremap kJ <Esc>
+inoremap Kj <Esc>
 
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{

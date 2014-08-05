@@ -82,3 +82,6 @@
 [submodule "bundle/dispatch"]
 	path = bundle/dispatch
 	url = https://github.com/tpope/vim-dispatch
+[submodule "bundle/latexsuite"]
+	path = bundle/latexsuite
+	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex

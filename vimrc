@@ -161,6 +161,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 let &showbreak="↪ "
 
 " MAPPINGS {{{
+" set this window's working directory to open file's parent
+command Cd lcd %:p:h
+
 let mapleader = ","
 
 " Make Y behave like D and C

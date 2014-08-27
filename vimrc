@@ -194,15 +194,8 @@ noremap <up> <c-y>
 noremap ; :
 noremap : ;
 
-" mash jk to leave insert mode
+" jk to leave insert mode
 inoremap jk <Esc>
-inoremap JK <Esc>
-inoremap Jk <Esc>
-inoremap jK <Esc>
-inoremap kj <Esc>
-inoremap KJ <Esc>
-inoremap kJ <Esc>
-inoremap Kj <Esc>
 
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{

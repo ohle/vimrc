@@ -86,7 +86,6 @@ set grepprg=grep\ -nH\ $*
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab
 
 " always change current dir to dir of currently edited file
 " set autochdir
@@ -164,6 +163,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 let &showbreak="↪ "
 
 " MAPPINGS {{{
+" set this window's working directory to open file's parent
+command Cd lcd %:p:h
+
 let mapleader = ","
 
 " Make Y behave like D and C
@@ -195,15 +197,8 @@ noremap <up> <c-y>
 noremap ; :
 noremap : ;
 
-" mash jk to leave insert mode
+" jk to leave insert mode
 inoremap jk <Esc>
-inoremap JK <Esc>
-inoremap Jk <Esc>
-inoremap jK <Esc>
-inoremap kj <Esc>
-inoremap KJ <Esc>
-inoremap kJ <Esc>
-inoremap Kj <Esc>
 
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{
@@ -255,7 +250,7 @@ endfunction
 
 " {{{ Plugin settings
 
-" Browserlin
+" Browserlink
 let g:bl_no_mappings=1
 vnoremap <silent><Leader>bj :BLEvaluateSelection<CR>
 nnoremap <silent><Leader>bj :BLEvaluateBuffer<CR>

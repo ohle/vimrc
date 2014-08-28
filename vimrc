@@ -248,10 +248,11 @@ function! CalcBc()
 endfunction
 "}}}
 
-" {{{ Plugin settings
 
-" Browserlink
+" Plugin options {{{
+
+" brolin
 let g:bl_no_mappings=1
-vnoremap <silent><Leader>bj :BLEvaluateSelection<CR>
-nnoremap <silent><Leader>bj :BLEvaluateBuffer<CR>
+vnoremap <silent><Leader> bj :BLEvaluateSelection<CR>
+nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
 " }}}

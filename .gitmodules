@@ -85,6 +85,9 @@
 [submodule "bundle/latexsuite"]
 	path = bundle/latexsuite
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
-[submodule "bundle/delimitmate"]
-	path = bundle/delimitmate
-	url = https://github.com/Raimondi/delimitMate
+[submodule "bundle/brolink"]
+	path = bundle/brolink
+	url = https://github.com/jaxbot/browserlink.vim
+[submodule "bundle/wikidpad"]
+	path = bundle/wikidpad
+	url = https://github.com/ohle/wikidpad.vim

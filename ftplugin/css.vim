@@ -13,7 +13,7 @@ function! s:FormatBlock()
 	normal %
 	let end = line('.') - 1
 	" call commands for formatting and sorting
-	execute start.','.end.'Tab /:'
+	execute start.','.end.'Tab /^[^:]*\zs:'
 	execute start.','.end.'sort'
 	silent execute 'normal! vi{='
 	"remove empty lines

@@ -131,6 +131,9 @@ set undodir=~/.vim/undo
 set undolevels=1000
 set undoreload=10000
 
+set path=,,.,$PWD/src/**,$PWD/WebContent/**,$PWD/doc/**
+set tags=tags,$PWD/src/tags,./tags
+
 " tagfile handling
 " tagfiles are called "tags" and are found by searching upwards from the
 " current file's dir.

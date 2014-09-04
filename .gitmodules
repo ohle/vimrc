@@ -122,3 +122,6 @@
 	path = bundle/wikidpad
 	url = https://github.com/ohle/wikidpad.vim
 	ignore = dirty
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips

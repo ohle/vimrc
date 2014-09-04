@@ -257,4 +257,8 @@ endfunction
 let g:bl_no_mappings=1
 vnoremap <silent><Leader> bj :BLEvaluateSelection<CR>
 nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
+
+" UltiSnips
+" most terminals don't forward <c-tab>
+let g:UltiSnipsListSnippets = '<s-tab>' 
 " }}}

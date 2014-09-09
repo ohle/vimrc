@@ -262,3 +262,8 @@ nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
 " most terminals don't forward <c-tab>
 let g:UltiSnipsListSnippets = '<s-tab>' 
 " }}}
+
+" Load project specific settings
+if filereadable('settings.vim')
+	echom "Loading project specific settings"
+endif

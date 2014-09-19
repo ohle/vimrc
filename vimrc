@@ -82,10 +82,10 @@ set grepprg=grep\ -nH\ $*
 
 
 
-" Tab policy: 2 spaces, always expand to spaces
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+" Tab policy: 4 spaces, always expand to spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " always change current dir to dir of currently edited file
 " set autochdir

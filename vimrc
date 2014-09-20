@@ -82,10 +82,10 @@ set grepprg=grep\ -nH\ $*
 
 
 
-" Tab policy: 2 spaces, always expand to spaces
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+" Tab policy: 4 spaces, always expand to spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 " always change current dir to dir of currently edited file
 " set autochdir
@@ -97,6 +97,8 @@ set noinfercase
 set ignorecase
 set smartcase
 "set iskeyword+=32,-
+
+set nrformats=hex " no octal, please
 
 " Activate skim for pdfsync
 map ,v :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
@@ -255,4 +257,13 @@ endfunction
 let g:bl_no_mappings=1
 vnoremap <silent><Leader> bj :BLEvaluateSelection<CR>
 nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
+
+" UltiSnips
+" most terminals don't forward <c-tab>
+let g:UltiSnipsListSnippets = '<s-tab>' 
 " }}}
+
+" Load project specific settings
+if filereadable('settings.vim')
+	echom "Loading project specific settings"
+endif

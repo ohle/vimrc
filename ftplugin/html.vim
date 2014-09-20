@@ -4,8 +4,8 @@ else
   let b:browsercmd = "google-chrome"
 endif
 
-function! b:fileurl()
+function! s:fileurl()
   return "file://" . expand("%:p")
 endfunction
 
-nnoremap <buffer> <leader>v :call system(b:browsercmd . " " . b:fileurl() . " & ")<cr>
+nnoremap <buffer> <leader>v :call system(b:browsercmd . " " . <SID>fileurl() . " & ")<cr>

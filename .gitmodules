@@ -129,3 +129,6 @@
 [submodule "bundle/sleuth"]
 	path = bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth
+[submodule "bundle/github-issues"]
+	path = bundle/github-issues
+	url = https://github.com/jaxbot/github-issues.vim

@@ -253,7 +253,7 @@ endfunction
 
 " Plugin options {{{
 
-" brolin
+" brolink
 let g:bl_no_mappings=1
 vnoremap <silent><Leader> bj :BLEvaluateSelection<CR>
 nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
@@ -261,7 +261,13 @@ nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
 " UltiSnips
 " most terminals don't forward <c-tab>
 let g:UltiSnipsListSnippets = '<s-tab>' 
-" }}}
+let g:UltiSnipsEditSplit = 'horizontal'
+
+" github-issues
+source github-access-token.vim " outsourced for security reasons
+
+
+" }}} Plugin options
 
 " Load project specific settings
 if filereadable('settings.vim')

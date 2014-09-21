@@ -264,8 +264,7 @@ let g:UltiSnipsListSnippets = '<s-tab>'
 let g:UltiSnipsEditSplit = 'horizontal'
 
 " github-issues
-source github-access-token.vim " outsourced for security reasons
-
+runtime github-access-token.vim " outsourced for security reasons
 
 " }}} Plugin options
 

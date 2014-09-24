@@ -119,12 +119,16 @@
 [submodule "bundle/characterize"]
 	path = bundle/characterize
 	url = https://github.com/tpope/vim-characterize
+	ignore = dirty
 [submodule "bundle/json"]
 	path = bundle/json
 	url = https://github.com/leshill/vim-json
+	ignore = dirty
 [submodule "bundle/sleuth"]
 	path = bundle/sleuth
 	url = https://github.com/tpope/vim-sleuth
+	ignore = dirty
 [submodule "bundle/github-issues"]
 	path = bundle/github-issues
 	url = https://github.com/jaxbot/github-issues.vim
+	ignore = dirty

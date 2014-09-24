@@ -1,5 +1,5 @@
 " An example for a vimrc file.
-" vim:foldmethod=marker
+" vim:foldmethod=marker ts=4
 "
 " Maintainer: Bram Moolenaar <Bram@vim.org>
 " Last change:  2002 Sep 19
@@ -264,7 +264,7 @@ let g:UltiSnipsListSnippets = '<s-tab>'
 let g:UltiSnipsEditSplit = 'horizontal'
 
 " github-issues
-runtime github-access-token.vim " outsourced for security reasons
+runtime github-access-token.vim " g:github_access_token outsourced for security reasons
 
 " }}} Plugin options
 

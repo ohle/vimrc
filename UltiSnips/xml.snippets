@@ -1,4 +1,46 @@
-snippet id "new android layout id"
+snippet andid "new android layout id"
 android:id="@${1:+}id/${2:id}"$0
 endsnippet
 
+snippet anddim "android layout dimensions"
+android:layout_width="${1:wrap_content}"
+android:layout_height="${2:wrap_content}"
+endsnippet
+
+snippet andstyle "android widget style"
+style="?android:${1:identifier}"
+endsnippet
+
+snippet andstring "android string resource"
+<string name="${1:name}">${2:value}</string>
+endsnippet
+
+snippet textview "android text view"
+<TextView
+	android:layout_width="${1:match_parent}"
+	android:layout_height="${2:wrap_content}"
+	android:text="${3:@string/${4:id}}"$5
+/>$0
+endsnippet
+
+snippet button "android button"
+<Button
+	android:id="@${1:+}id/${2:id}"
+	android:layout_width="${3:match_parent}"
+	android:layout_height="${4:wrap_content}"
+	android:layout_marginLeft="${5:16dp}"
+	android:layout_marginRight="${6:16dp}"
+/>$0
+endsnippet
+	
+snippet checkbox "android checkbox"
+<CheckBox
+	android:id="@${1:+}id/${2:id}"
+	android:layout_width="${3:match_parent}"
+	android:layout_height="${4:wrap_content}"
+	android:layout_marginLeft="${5:16dp}"
+	android:layout_marginRight="${6:16dp}"
+	android:text="${7:@string/${8:id}}"
+/>$0
+endsnippet
+	

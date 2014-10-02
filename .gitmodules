@@ -132,3 +132,7 @@
 	path = bundle/github-issues
 	url = https://github.com/jaxbot/github-issues.vim
 	ignore = dirty
+[submodule "bundle/projectionist"]
+	path = bundle/projectionist
+	url = https://github.com/tpope/vim-projectionist
+	ignore = dirty

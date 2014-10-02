@@ -266,9 +266,20 @@ let g:UltiSnipsEditSplit = 'horizontal'
 " github-issues
 runtime github-access-token.vim " g:github_access_token outsourced for security reasons
 
-" }}} Plugin options
+" projectionist heuristics
+let g:projectionist_heuristics = {
+  \ "build.xml&src/main/" : {
+  \     "src/main/*.java" : {
+  \         "type": "source"
+  \     },
+  \     "src/main/*.groovy": {
+  \         "type": "source"
+  \     },
+  \     "*": {
+  \         "make": "ant",
+  \         "start": "ant run"
+  \     }
+  \}
 
-" Load project specific settings
-if filereadable('settings.vim')
-	echom "Loading project specific settings"
-endif
+
+" }}} Plugin options

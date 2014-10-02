@@ -267,19 +267,21 @@ let g:UltiSnipsEditSplit = 'horizontal'
 runtime github-access-token.vim " g:github_access_token outsourced for security reasons
 
 " projectionist heuristics
-let g:projectionist_heuristics = {
-  \ "build.xml&src/main/" : {
-  \     "src/main/*.java" : {
-  \         "type": "source"
-  \     },
-  \     "src/main/*.groovy": {
-  \         "type": "source"
-  \     },
-  \     "*": {
-  \         "make": "ant",
-  \         "start": "ant run"
-  \     }
-  \}
+let g:projectionist_heuristics = 
+      \{
+      \ "build.xml&src/main/" : {
+      \     "src/main/*.java" : {
+      \         "type": "source"
+      \     },
+      \     "src/main/*.groovy": {
+      \         "type": "source"
+      \     },
+      \     "*": {
+      \         "make": "ant",
+      \         "start": "ant run"
+      \     }
+      \ }
+      \}
 
 
 " }}} Plugin options

@@ -113,9 +113,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "bundle/snippets"]
-	path = bundle/snippets
-	url = https://github.com/honza/vim-snippets
 [submodule "bundle/characterize"]
 	path = bundle/characterize
 	url = https://github.com/tpope/vim-characterize

@@ -38,6 +38,7 @@ set showcmd       " display incomplete commands
 set wildmenu      " completion in window
 set wildmode=longest,list,full " Tab-completion for filenames bash-style
 set textwidth=80
+set colorcolumn=80
 
 syntax on       " syntax highlighting
 set background=dark

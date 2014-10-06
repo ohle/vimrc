@@ -37,7 +37,7 @@ set scrolloff=1   " keep a line above/below when scrolling
 set showcmd       " display incomplete commands
 set wildmenu      " completion in window
 set wildmode=longest,list,full " Tab-completion for filenames bash-style
-set textwidth=78
+set textwidth=80
 
 syntax on       " syntax highlighting
 set background=dark
@@ -187,6 +187,10 @@ nnoremap <leader>tt :execute
 
 " align current paragraph
 nnoremap <leader>a mm=ip`m
+
+" shortcuts for dispatch.vim
+nnoremap <leader>d :Dispatch<cr>
+nnoremap <leader>s :Start<cr>
 
 " instant replay
 nnoremap Q @q

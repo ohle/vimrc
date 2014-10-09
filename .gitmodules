@@ -14,10 +14,6 @@
 	path = bundle/markdown
 	url = https://github.com/plasticboy/vim-markdown.git
 	ignore = dirty
-[submodule "bundle/tcomment"]
-	path = bundle/tcomment
-	url = https://github.com/tomtom/tcomment_vim.git
-	ignore = dirty
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating
@@ -133,3 +129,6 @@
 	path = bundle/projectionist
 	url = https://github.com/tpope/vim-projectionist
 	ignore = dirty
+[submodule "bundle/commentary"]
+	path = bundle/commentary
+	url = https://github.com/tpope/vim-commentary

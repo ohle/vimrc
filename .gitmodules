@@ -132,3 +132,4 @@
 [submodule "bundle/commentary"]
 	path = bundle/commentary
 	url = https://github.com/tpope/vim-commentary
+	ignore = dirty

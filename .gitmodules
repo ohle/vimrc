@@ -133,3 +133,7 @@
 	path = bundle/commentary
 	url = https://github.com/tpope/vim-commentary
 	ignore = dirty
+[submodule "bundle/yaml"]
+	path = bundle/yaml
+	url = https://github.com/stephpy/vim-yaml
+	ignore = dirty

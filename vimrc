@@ -72,6 +72,12 @@ if has("autocmd")
 
   augroup END
 
+  " rerun filetype detection on write
+  augroup filetype_detect_on_rename
+    autocmd!
+    autocmd BufFilePost * filetype detect
+  augroup END
+
 else
 
   set autoindent    " always set autoindenting on

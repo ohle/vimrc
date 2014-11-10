@@ -141,3 +141,6 @@
 	path = bundle/CamelCaseMotion
 	url = https://github.com/bkad/CamelCaseMotion
 	ignore = dirty
+[submodule "bundle/fireplace"]
+	path = bundle/fireplace
+	url = https://github.com/tpope/vim-fireplace

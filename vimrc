@@ -181,7 +181,7 @@ let mapleader = ","
 noremap Y y$
 
 " whitespace display
-nnoremap <leader>w :set list!<cr>
+nnoremap <leader>s :set list!<cr>
 
 " line number display
 nnoremap <leader>n :set number!\|:set relativenumber!<cr>
@@ -196,8 +196,8 @@ nnoremap <leader>tt :execute
 nnoremap <leader>a mm=ip`m
 
 " shortcuts for dispatch.vim
-nnoremap <leader>d :Dispatch<cr>
-nnoremap <leader>s :Start<cr>
+nnoremap <leader>D :Dispatch<cr>
+nnoremap <leader>S :Start<cr>
 
 " instant replay
 nnoremap Q @q

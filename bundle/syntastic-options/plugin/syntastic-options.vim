@@ -15,6 +15,3 @@ let g:syntastic_always_populate_loc_list=1
 " javascript
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_javascript_jslint_args = "--undef --regexp --plusplus --white --vars"
-
-" mapping for manual syntax checking
-nmap <leader>s :SyntasticCheck<cr>

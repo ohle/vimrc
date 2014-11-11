@@ -144,3 +144,4 @@
 [submodule "bundle/fireplace"]
 	path = bundle/fireplace
 	url = https://github.com/tpope/vim-fireplace
+	ignore = dirty

@@ -145,3 +145,7 @@
 	path = bundle/fireplace
 	url = https://github.com/tpope/vim-fireplace
 	ignore = dirty
+[submodule "bundle/afterimage"]
+	path = bundle/afterimage
+	url = https://github.com/tpope/vim-afterimage
+	ignore = dirty

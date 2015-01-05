@@ -14,7 +14,13 @@ $ git submodule update
 ```
 
 ## Installing plugins
-Plugins are managed by the `pathogen`-plugin
+Plugins are managed by the [`vimplug` plugin](https://github.com/junegunn/vim-plug/).
+Unmanaged plugins go into `unmanaged-plugins/` and are registered with the
+`Plug` command:
+
+    Plug ~/.vim/unmanaged-plugins/foo
+
+
 ### Archive format
 Unpack into `.vim/bundle/pluginname`
 ### Vimball

@@ -163,10 +163,10 @@ call plug#begin('~/.vim/bundle')
 	Plug 'ohle/wikidpad.vim'
 	Plug 'stephpy/vim-yaml'
 	Plug 'vim-scripts/ZoomWin'
-	Plug 'redacted/survace-evolver-vim'
+	Plug 'redacted/surface-evolver-vim'
 	Plug 'lukerandall/haskellmode-vim'
 	Plug 'derekwyatt/vim-scala'
-	Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
+	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end()
 
 "let g:solarized_termcolors=256
@@ -367,16 +367,6 @@ let g:syntastic_always_populate_loc_list=1
 " javascript
 let g:syntastic_javascript_checkers=['jslint']
 let g:syntastic_javascript_jslint_args = "--undef --regexp --plusplus --white --vars"
-
-" Tabular patterns
-" first = of the line
-AddTabularPattern 1= /^[^=]*\zs=
-" first : of the line
-AddTabularPattern 1: /^[^:]*\zs:
-" first space after first word of the line
-AddTabularPattern 1s /^\s*[^ ][^ ]*\zs[ ]
-" HTML tables
-AddTabularPattern td /\(<td[^\/>]*>.\{-}<\/td>\)\|\(<th[^\/>]*>.\{-}<\/th>\)\|\(<td *\/>\)\|\(<th *\/>\)
 
 " SLIME
 let g:slime_target = "tmux"

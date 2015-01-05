@@ -44,6 +44,7 @@ syntax on       " syntax highlighting
 set background=dark
 set incsearch   " do incremental searching
 set hlsearch    " search highlighting
+set conceallevel=2
 "C-N to clear search highlighting
 nnoremap <silent> <C-N> :silent noh<CR>
 
@@ -124,7 +125,49 @@ endif
 
 filetype plugin indent on
 
-execute pathogen#infect()
+" Manage plugins with vimplug
+call plug#begin('~/.vim/bundle')
+	Plug 'bkad/CamelCaseMotion'
+	Plug 'mileszs/ack.vim'
+	Plug 'tpope/vim-afterimage'
+	Plug 'jaxbot/browserlink.vim'
+	Plug 'corntrace/bufexplorer'
+	Plug 'tpope/vim-characterize'
+	Plug 'tpope/vim-commentary'
+	Plug 'tpope/vim-dispatch'
+	Plug 'tpope/vim-fireplace'
+	Plug 'tpope/vim-fugitive'
+	Plug 'jaxbot/github-issues.vim'
+	Plug 'sjl/gundo.vim'
+	Plug 'Shougo/javacomplete'
+	Plug 'leshill/vim-json'
+	Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+	Plug 'plasticboy/vim-markdown'
+	Plug 'tmhedberg/matchit'
+	Plug 'tpope/vim-projectionist'
+	Plug 'tpope/vim-repeat'
+	Plug 'mdreves/vim-scaladoc'
+	Plug 'tpope/vim-sleuth'
+	Plug 'altercation/vim-colors-solarized'
+	Plug 'tpope/vim-speeddating'
+	Plug 'scrooloose/vim-statline'
+	Plug 'tpope/vim-surround'
+	Plug 'scrooloose/syntastic'
+	Plug 'godlygeek/tabular'
+	Plug 'kana/vim-textobj-lastpat'
+	Plug 'kana/vim-textobj-user'
+	Plug 'SirVer/ultisnips'
+	Plug 'jpalardy/vim-slime'
+	Plug 'vimoutliner/vimoutliner'
+	Plug 'tpope/vim-vinegar'
+	Plug 'ohle/wikidpad.vim'
+	Plug 'stephpy/vim-yaml'
+	Plug 'vim-scripts/ZoomWin'
+	Plug 'redacted/survace-evolver-vim'
+	Plug 'lukerandall/haskellmode-vim'
+	Plug 'derekwyatt/vim-scala'
+	Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
+call plug#end()
 
 "let g:solarized_termcolors=256
 colorscheme solarized
@@ -295,4 +338,46 @@ let g:projectionist_heuristics =
       \}
 
 
+" bufexplorer
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerShowTabBuffer=1
+
+" gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" javacomplete
+setlocal omnifunc=javacomplete#Complete
+" setlocal completefunc=javacomplete#CompleteParamsInfo
+
+" statline
+let g:statline_trailing_space = 0
+
+" Synsastic
+" disable for scala, since scala compilers are slow and sbt-quickfix does
+" basically the same thing but asynchronously
+let g:syntastic_mode_map = 
+			\ { 'mode': 'active',
+					\ 'active_filetypes': [],
+					\ 'passive_filetypes': ['sbt', 'scala'] 
+				\}
+" Always update the location list after a syntax check
+let g:syntastic_always_populate_loc_list=1
+
+" select and configure checkers
+" javascript
+let g:syntastic_javascript_checkers=['jslint']
+let g:syntastic_javascript_jslint_args = "--undef --regexp --plusplus --white --vars"
+
+" Tabular patterns
+" first = of the line
+AddTabularPattern 1= /^[^=]*\zs=
+" first : of the line
+AddTabularPattern 1: /^[^:]*\zs:
+" first space after first word of the line
+AddTabularPattern 1s /^\s*[^ ][^ ]*\zs[ ]
+" HTML tables
+AddTabularPattern td /\(<td[^\/>]*>.\{-}<\/td>\)\|\(<th[^\/>]*>.\{-}<\/th>\)\|\(<td *\/>\)\|\(<th *\/>\)
+
+" SLIME
+let g:slime_target = "tmux"
 " }}} Plugin options

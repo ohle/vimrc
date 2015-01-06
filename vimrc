@@ -129,24 +129,24 @@ filetype plugin indent on
 call plug#begin('~/.vim/bundle')
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'mileszs/ack.vim'
-	Plug 'tpope/vim-afterimage'
-	Plug 'jaxbot/browserlink.vim'
+	Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
+	Plug 'jaxbot/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp' ] }
 	Plug 'corntrace/bufexplorer'
 	Plug 'tpope/vim-characterize'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-dispatch'
-	Plug 'tpope/vim-fireplace'
+	Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 	Plug 'tpope/vim-fugitive'
 	Plug 'jaxbot/github-issues.vim'
 	Plug 'sjl/gundo.vim'
-	Plug 'Shougo/javacomplete'
-	Plug 'leshill/vim-json'
-	Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-	Plug 'plasticboy/vim-markdown'
+	Plug 'Shougo/javacomplete', { 'for': 'java' }
+	Plug 'leshill/vim-json', { 'for': 'json' }
+	Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex', { 'for': 'json' }
+	Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 	Plug 'tmhedberg/matchit'
 	Plug 'tpope/vim-projectionist'
 	Plug 'tpope/vim-repeat'
-	Plug 'mdreves/vim-scaladoc'
+	Plug 'mdreves/vim-scaladoc', { 'for': 'scala' }
 	Plug 'tpope/vim-sleuth'
 	Plug 'altercation/vim-colors-solarized'
 	Plug 'tpope/vim-speeddating'
@@ -161,11 +161,12 @@ call plug#begin('~/.vim/bundle')
 	Plug 'vimoutliner/vimoutliner'
 	Plug 'tpope/vim-vinegar'
 	Plug 'ohle/wikidpad.vim'
-	Plug 'stephpy/vim-yaml'
+	Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 	Plug 'vim-scripts/ZoomWin'
-	Plug 'redacted/surface-evolver-vim'
-	Plug 'lukerandall/haskellmode-vim'
-	Plug 'derekwyatt/vim-scala'
+	Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
+	Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
+	Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+	Plug 'fmoralesc/vim-pad'
 	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end()
 
@@ -370,4 +371,8 @@ let g:syntastic_javascript_jslint_args = "--undef --regexp --plusplus --white --
 
 " SLIME
 let g:slime_target = "tmux"
+
+" Vim-pad
+let g:pad#dir = '~/Dropbox/vimpad'
+let g:pad#local_dir = 'notes'
 " }}} Plugin options

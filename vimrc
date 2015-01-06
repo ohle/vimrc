@@ -272,6 +272,10 @@ function! QuickFixToggle()
   endif
 endfunction
 "}}}
+
+" vim-pad
+nnoremap <leader>pl <Plug>ListPads
+nnoremap <leader>ps <Plug>
 " }}}
 
 "Calculations: pipe visually selected area through bc {{{
@@ -305,6 +309,8 @@ function! CalcBc()
 endfunction
 "}}}
 
+
+let s:browserpath = system("bash -c 'which google-chrome'")
 
 " Plugin options {{{
 
@@ -375,4 +381,8 @@ let g:slime_target = "tmux"
 " Vim-pad
 let g:pad#dir = '~/Dropbox/vimpad'
 let g:pad#local_dir = 'notes'
+let g:pad#use_default_mappings = 0
+
+" Haskell
+let g:haddock_browser=s:browserpath
 " }}} Plugin options

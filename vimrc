@@ -258,6 +258,13 @@ noremap : ;
 " jk to leave insert mode
 inoremap jk <Esc>
 
+" duplicate current line ant comment out one copy with commentary
+nnoremap <leader>cd yyp:Commentary<cr>k
+" toggle commented state of this line and the one below
+nnoremap <leader>cj :Commentary<cr>j:Commentary<cr>k
+" toggle commented state of this line and the one above
+nnoremap <leader>ck :Commentary<cr>k:Commentary<cr>j
+
 nnoremap <leader>q :call QuickFixToggle()<cr>
 " quickfix toggle helper function {{{
 let g:quickfix_is_open = 0
@@ -275,8 +282,9 @@ endfunction
 "}}}
 
 " vim-pad
-nnoremap <leader>pl <Plug>ListPads
-nnoremap <leader>ps <Plug>
+nnoremap <leader>pl :Pad ls<cr>
+nnoremap <leader>ps :Pad new<cr>
+nnoremap <leader>pt :Pad this<cr>
 " }}}
 
 "Calculations: pipe visually selected area through bc {{{

@@ -167,6 +167,7 @@ call plug#begin('~/.vim/bundle')
 	Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
 	Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 	Plug 'fmoralesc/vim-pad'
+	Plug 'greyblake/vim-preview'
 	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end()
 
@@ -379,10 +380,13 @@ let g:syntastic_javascript_jslint_args = "--undef --regexp --plusplus --white --
 let g:slime_target = "tmux"
 
 " Vim-pad
-let g:pad#dir = '~/Dropbox/vimpad'
+let g:pad#dir = expand('~/Dropbox/vimpad/')
 let g:pad#local_dir = 'notes'
 let g:pad#use_default_mappings = 0
 
 " Haskell
 let g:haddock_browser=s:browserpath
+
+" Preview
+let g:PreviewBrowsers = 'google-chrome'
 " }}} Plugin options

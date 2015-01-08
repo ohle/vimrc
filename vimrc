@@ -126,7 +126,7 @@ endif
 filetype plugin indent on
 
 " Manage plugins with vimplug
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/bundle') " {{{
 	Plug 'bkad/CamelCaseMotion'
 	Plug 'mileszs/ack.vim'
 	Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
@@ -157,10 +157,7 @@ call plug#begin('~/.vim/bundle')
 	Plug 'kana/vim-textobj-lastpat'
 	Plug 'kana/vim-textobj-user'
 	Plug 'SirVer/ultisnips'
-	Plug 'jpalardy/vim-slime'
-	Plug 'vimoutliner/vimoutliner'
 	Plug 'tpope/vim-vinegar'
-	Plug 'ohle/wikidpad.vim'
 	Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 	Plug 'vim-scripts/ZoomWin'
 	Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
@@ -170,7 +167,7 @@ call plug#begin('~/.vim/bundle')
 	Plug 'greyblake/vim-preview'
 	Plug 'maxbrunsfeld/vim-yankstack'
 	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
-call plug#end()
+call plug#end() " }}}
 call yankstack#setup()
 
 "let g:solarized_termcolors=256
@@ -367,6 +364,7 @@ setlocal omnifunc=javacomplete#Complete
 
 " statline
 let g:statline_trailing_space = 0
+let g:statline_fugitive = 1
 
 " Synsastic
 " disable for scala, since scala compilers are slow and sbt-quickfix does

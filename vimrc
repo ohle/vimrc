@@ -168,8 +168,10 @@ call plug#begin('~/.vim/bundle')
 	Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 	Plug 'fmoralesc/vim-pad'
 	Plug 'greyblake/vim-preview'
+	Plug 'maxbrunsfeld/vim-yankstack'
 	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end()
+call yankstack#setup()
 
 "let g:solarized_termcolors=256
 colorscheme solarized
@@ -318,9 +320,7 @@ function! CalcBc()
 endfunction
 "}}}
 
-
 let s:browserpath = system("bash -c 'which google-chrome'")
-
 " Plugin options {{{
 
 " brolink
@@ -397,4 +397,9 @@ let g:haddock_browser=s:browserpath
 
 " Preview
 let g:PreviewBrowsers = 'google-chrome'
+
+" yankstack
+let g:yankstack_map_keys = 0
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " }}} Plugin options

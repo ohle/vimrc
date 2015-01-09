@@ -214,6 +214,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " marker for wrapped lines
 let &showbreak="↪ "
+if has('nvim')
+  set breakindent
+endif
 
 " MAPPINGS {{{
 " set this window's working directory to open file's parent

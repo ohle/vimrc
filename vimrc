@@ -397,7 +397,8 @@ let g:pad#use_default_mappings = 0
 let g:haddock_browser=s:browserpath
 
 " Preview
-let g:PreviewBrowsers = 'google-chrome'
+let g:PreviewBrowsers    = 'google-chrome'
+let g:PreviewMarkdownExt = 'markdown,md,mkd,mkdn,mdown,mkdc'
 
 " yankstack
 let g:yankstack_map_keys = 0

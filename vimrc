@@ -380,8 +380,7 @@ let g:syntastic_always_populate_loc_list=1
 
 " select and configure checkers
 " javascript
-let g:syntastic_javascript_checkers=['jslint']
-let g:syntastic_javascript_jslint_args = "--undef --regexp --plusplus --white --vars"
+let g:syntastic_javascript_checkers=['jshint']
 
 " SLIME
 let g:slime_target = "tmux"

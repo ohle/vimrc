@@ -150,7 +150,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-sleuth'
     Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-speeddating'
-    Plug 'scrooloose/vim-statline'
     Plug 'tpope/vim-surround'
     Plug 'scrooloose/syntastic'
     Plug 'godlygeek/tabular'
@@ -165,13 +164,11 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
     Plug 'fmoralesc/vim-pad'
     Plug 'greyblake/vim-preview'
-    Plug 'maxbrunsfeld/vim-yankstack'
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
     Plug 'gregsexton/gitv'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
-call yankstack#setup()
 
 "let g:solarized_termcolors=256
 colorscheme solarized
@@ -369,10 +366,6 @@ nnoremap <leader>u :GundoToggle<CR>
 setlocal omnifunc=javacomplete#Complete
 " setlocal completefunc=javacomplete#CompleteParamsInfo
 
-" statline
-let g:statline_trailing_space = 0
-let g:statline_fugitive = 1
-
 " Synsastic
 " disable for scala, since scala compilers are slow and sbt-quickfix does
 " basically the same thing but asynchronously
@@ -403,11 +396,6 @@ let g:haddock_browser=s:browserpath
 " Preview
 let g:PreviewBrowsers    = 'google-chrome'
 let g:PreviewMarkdownExt = 'markdown,md,mkd,mkdn,mdown,mkdc'
-
-" yankstack
-let g:yankstack_map_keys = 0
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " airline
 let g:airline_powerline_fonts=1

@@ -130,7 +130,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'bkad/CamelCaseMotion'
     Plug 'mileszs/ack.vim'
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
-    Plug 'jaxbot/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp' ] }
+    Plug 'ohle/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp' ] }
     Plug 'corntrace/bufexplorer'
     Plug 'tpope/vim-characterize'
     Plug 'tpope/vim-commentary'

@@ -168,6 +168,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'maxbrunsfeld/vim-yankstack'
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
+    Plug 'gregsexton/gitv'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 call yankstack#setup()

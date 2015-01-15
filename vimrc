@@ -166,12 +166,14 @@ call plug#begin('~/.vim/bundle') " {{{
 	Plug 'fmoralesc/vim-pad'
 	Plug 'greyblake/vim-preview'
 	Plug 'maxbrunsfeld/vim-yankstack'
+	Plug 'airblade/vim-gitgutter'
 	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 call yankstack#setup()
 
 "let g:solarized_termcolors=256
 colorscheme solarized
+highlight clear SignColumn
 
 " Enable mouse in terminal mode (for resizing splits etc.)
 set mouse=a

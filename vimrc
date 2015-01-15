@@ -127,48 +127,48 @@ filetype plugin indent on
 
 " Manage plugins with vimplug
 call plug#begin('~/.vim/bundle') " {{{
-	Plug 'bkad/CamelCaseMotion'
-	Plug 'mileszs/ack.vim'
-	Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
-	Plug 'jaxbot/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp' ] }
-	Plug 'corntrace/bufexplorer'
-	Plug 'tpope/vim-characterize'
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-dispatch'
-	Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-	Plug 'tpope/vim-fugitive'
-	Plug 'jaxbot/github-issues.vim'
-	Plug 'sjl/gundo.vim'
-	Plug 'Shougo/javacomplete', { 'for': 'java' }
-	Plug 'leshill/vim-json', { 'for': 'json' }
-	Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex', { 'for': 'json' }
-	Plug 'prurigro/vim-markdown-concealed', { 'for': [ 'markdown', 'mkd', 'mkdc' ] }
-	Plug 'tmhedberg/matchit'
-	Plug 'tpope/vim-projectionist'
-	Plug 'tpope/vim-repeat'
-	Plug 'mdreves/vim-scaladoc', { 'for': 'scala' }
-	Plug 'tpope/vim-sleuth'
-	Plug 'altercation/vim-colors-solarized'
-	Plug 'tpope/vim-speeddating'
-	Plug 'scrooloose/vim-statline'
-	Plug 'tpope/vim-surround'
-	Plug 'scrooloose/syntastic'
-	Plug 'godlygeek/tabular'
-	Plug 'kana/vim-textobj-lastpat'
-	Plug 'kana/vim-textobj-user'
-	Plug 'SirVer/ultisnips'
-	Plug 'tpope/vim-vinegar'
-	Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-	Plug 'vim-scripts/ZoomWin'
-	Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
-	Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
-	Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-	Plug 'fmoralesc/vim-pad'
-	Plug 'greyblake/vim-preview'
-	Plug 'maxbrunsfeld/vim-yankstack'
-	Plug 'airblade/vim-gitgutter'
-	Plug 'bling/vim-airline'
-	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
+    Plug 'bkad/CamelCaseMotion'
+    Plug 'mileszs/ack.vim'
+    Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
+    Plug 'jaxbot/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp' ] }
+    Plug 'corntrace/bufexplorer'
+    Plug 'tpope/vim-characterize'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-dispatch'
+    Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+    Plug 'tpope/vim-fugitive'
+    Plug 'jaxbot/github-issues.vim'
+    Plug 'sjl/gundo.vim'
+    Plug 'Shougo/javacomplete', { 'for': 'java' }
+    Plug 'leshill/vim-json', { 'for': 'json' }
+    Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex', { 'for': 'json' }
+    Plug 'prurigro/vim-markdown-concealed', { 'for': [ 'markdown', 'mkd', 'mkdc' ] }
+    Plug 'tmhedberg/matchit'
+    Plug 'tpope/vim-projectionist'
+    Plug 'tpope/vim-repeat'
+    Plug 'mdreves/vim-scaladoc', { 'for': 'scala' }
+    Plug 'tpope/vim-sleuth'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'tpope/vim-speeddating'
+    Plug 'scrooloose/vim-statline'
+    Plug 'tpope/vim-surround'
+    Plug 'scrooloose/syntastic'
+    Plug 'godlygeek/tabular'
+    Plug 'kana/vim-textobj-lastpat'
+    Plug 'kana/vim-textobj-user'
+    Plug 'SirVer/ultisnips'
+    Plug 'tpope/vim-vinegar'
+    Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+    Plug 'vim-scripts/ZoomWin'
+    Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
+    Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
+    Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+    Plug 'fmoralesc/vim-pad'
+    Plug 'greyblake/vim-preview'
+    Plug 'maxbrunsfeld/vim-yankstack'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'bling/vim-airline'
+    " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 call yankstack#setup()
 
@@ -240,7 +240,7 @@ nnoremap <leader>n :set number!\|:set relativenumber!<cr>
 nnoremap <leader>sp :execute "rightbelow vsplit " . bufname('#')<cr>
 
 " open current buffer in a new tab
-nnoremap <leader>tt :execute 
+nnoremap <leader>tt :execute
 
 " align current paragraph
 nnoremap <leader>a mm=ip`m
@@ -333,14 +333,14 @@ nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
 
 " UltiSnips
 " most terminals don't forward <c-tab>
-let g:UltiSnipsListSnippets = '<s-tab>' 
+let g:UltiSnipsListSnippets = '<s-tab>'
 let g:UltiSnipsEditSplit = 'horizontal'
 
 " github-issues
 runtime github-access-token.vim " g:github_access_token outsourced for security reasons
 
 " projectionist heuristics
-let g:projectionist_heuristics = 
+let g:projectionist_heuristics =
       \{
       \ "build.xml&src/main/" : {
       \     "src/main/*.java" : {
@@ -375,11 +375,11 @@ let g:statline_fugitive = 1
 " Synsastic
 " disable for scala, since scala compilers are slow and sbt-quickfix does
 " basically the same thing but asynchronously
-let g:syntastic_mode_map = 
-			\ { 'mode': 'active',
-					\ 'active_filetypes': [],
-					\ 'passive_filetypes': ['sbt', 'scala'] 
-				\}
+let g:syntastic_mode_map =
+            \ { 'mode': 'active',
+                    \ 'active_filetypes': [],
+                    \ 'passive_filetypes': ['sbt', 'scala']
+                \}
 " Always update the location list after a syntax check
 let g:syntastic_always_populate_loc_list=1
 

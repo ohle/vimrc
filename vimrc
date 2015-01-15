@@ -167,6 +167,7 @@ call plug#begin('~/.vim/bundle') " {{{
 	Plug 'greyblake/vim-preview'
 	Plug 'maxbrunsfeld/vim-yankstack'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'bling/vim-airline'
 	" Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 call yankstack#setup()
@@ -406,4 +407,7 @@ let g:PreviewMarkdownExt = 'markdown,md,mkd,mkdn,mdown,mkdc'
 let g:yankstack_map_keys = 0
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" airline
+let g:airline_powerline_fonts=1
 " }}} Plugin options

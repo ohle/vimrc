@@ -411,4 +411,5 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " airline
 let g:airline_powerline_fonts=1
+let g:airline#extensions#default#section_truncate_width = {}
 " }}} Plugin options

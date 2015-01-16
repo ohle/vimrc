@@ -13,14 +13,14 @@ if !exists('g:markdown_preview_browser')
     let g:markdown_preview_browser = 'google-chrome'
 endif
 
-let s:basedir = expand('%:p:h')
+let b:basedir = expand('%:p:h')
 let s:basename = expand('%:t:r')
 
 " find a suitable css file from a list of candidate file names, looking up to
 " one subdirectory deep from the current directory, and falling back to a
 " built-in default
 let b:cssFiles = [ s:basename.'.css', 'markdown.css', 'style.css', 'styles.css' ]
-call    map(b:cssFiles, 'findfile(v:val, "**1")')
+call    map(b:cssFiles, 'b:basedir . "/" . findfile(v:val, b:basedir."/**1")')
 call    add(b:cssFiles, expand('<sfile>:p:h') . '/markdown.css') " fallback
 call filter(b:cssFiles, 'v:val != ""')
 let b:cssFile = b:cssFiles[0]

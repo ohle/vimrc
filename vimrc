@@ -130,7 +130,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'bkad/CamelCaseMotion'
     Plug 'mileszs/ack.vim'
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
-    Plug 'ohle/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp' ] }
+    Plug 'ohle/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp', 'mkd', 'markdown', 'mkdc' ] }
     Plug 'corntrace/bufexplorer'
     Plug 'tpope/vim-characterize'
     Plug 'tpope/vim-commentary'
@@ -163,7 +163,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
     Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
     Plug 'fmoralesc/vim-pad'
-    Plug 'greyblake/vim-preview'
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
     Plug 'scrooloose/vim-statline'
@@ -327,6 +326,7 @@ let s:browserpath = system("bash -c 'which google-chrome'")
 
 " brolink
 let g:bl_no_mappings=1
+let g:bl_pagefiletypes = ['html', 'javascript', 'php', 'markdown', 'mkdc']
 vnoremap <silent><Leader> bj :BLEvaluateSelection<CR>
 nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
 
@@ -392,10 +392,6 @@ let g:pad#use_default_mappings = 0
 
 " Haskell
 let g:haddock_browser=s:browserpath
-
-" Preview
-let g:PreviewBrowsers    = 'google-chrome'
-let g:PreviewMarkdownExt = 'markdown,md,mkd,mkdn,mdown,mkdc'
 
 " airline
 let g:airline_powerline_fonts=1

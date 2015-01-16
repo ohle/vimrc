@@ -20,9 +20,10 @@ let s:basename = expand('%:t:r')
 " one subdirectory deep from the current directory, and falling back to a
 " built-in default
 let b:cssFiles = [ s:basename.'.css', 'markdown.css', 'style.css', 'styles.css' ]
-call    map(b:cssFiles, 'b:basedir . "/" . findfile(v:val, b:basedir."/**1")')
-call    add(b:cssFiles, expand('<sfile>:p:h') . '/markdown.css') " fallback
+call    map(b:cssFiles, 'findfile(v:val, b:basedir."/**1")')
 call filter(b:cssFiles, 'v:val != ""')
+call    map(b:cssFiles, 'b:basedir . "/" . v:val')
+call    add(b:cssFiles, expand('<sfile>:p:h') . '/markdown.css') " fallback
 let b:cssFile = b:cssFiles[0]
 
 let b:htmlFile = '/tmp/'.s:basename.'-preview.html'

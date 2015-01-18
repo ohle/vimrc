@@ -132,7 +132,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
     Plug 'ohle/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp', 'mkd', 'markdown', 'mkdc' ] }
     Plug 'corntrace/bufexplorer'
-    Plug 'tpope/vim-characterize'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }

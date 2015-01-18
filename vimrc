@@ -152,7 +152,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
     Plug 'scrooloose/syntastic'
-    Plug 'godlygeek/tabular'
+    Plug 'junegunn/vim-easy-align'
     Plug 'kana/vim-textobj-lastpat'
     Plug 'kana/vim-textobj-user'
     Plug 'SirVer/ultisnips'
@@ -288,6 +288,10 @@ endfunction
 nnoremap <leader>pl :Pad ls<cr>
 nnoremap <leader>ps :Pad new<cr>
 nnoremap <leader>pt :Pad this<cr>
+
+" Easy-align
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga      <Plug>(EasyAlign)
 " }}}
 
 "Calculations: pipe visually selected area through bc {{{

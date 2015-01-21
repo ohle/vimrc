@@ -39,6 +39,7 @@ set wildmenu      " completion in window
 set wildmode=longest,list,full " Tab-completion for filenames bash-style
 set textwidth=80
 set colorcolumn=+1
+set cursorline
 
 syntax on       " syntax highlighting
 set background=dark
@@ -166,6 +167,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'bling/vim-airline'
     Plug 'scrooloose/vim-statline'
     Plug 'gregsexton/gitv'
+    Plug 'tpope/vim-unimpaired'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 
@@ -227,27 +229,9 @@ let mapleader = ","
 " Make Y behave like D and C
 noremap Y y$
 
-" whitespace display
-nnoremap <leader>s :set list!<cr>
-
-" line number display
-nnoremap <leader>n :set number!\|:set relativenumber!<cr>
-
-" open previous buffer in vertical split
-nnoremap <leader>sp :execute "rightbelow vsplit " . bufname('#')<cr>
-
-" open current buffer in a new tab
-nnoremap <leader>tt :execute
-
-" align current paragraph
-nnoremap <leader>a mm=ip`m
-
 " shortcuts for dispatch.vim
 nnoremap <leader>D :Dispatch<cr>
 nnoremap <leader>S :Start<cr>
-
-" instant replay
-nnoremap Q @q
 
 " user arrow keys for line-by-line scrolling
 noremap <down> <c-e>
@@ -260,7 +244,7 @@ noremap : ;
 " jk to leave insert mode
 inoremap jk <Esc>
 
-" duplicate current line ant comment out one copy with commentary
+" duplicate current line and comment out one copy with commentary
 nnoremap <leader>cd yyp:Commentary<cr>k
 " toggle commented state of this line and the one below
 nnoremap <leader>cj :Commentary<cr>j:Commentary<cr>k

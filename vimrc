@@ -161,7 +161,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
     Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-    Plug 'fmoralesc/vim-pad'
+    Plug 'fmoralesc/vim-pad', { 'on': 'Pad' }
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
     Plug 'scrooloose/vim-statline'

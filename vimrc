@@ -237,9 +237,11 @@ nnoremap <leader>S :Start<cr>
 noremap <down> <c-e>
 noremap <up> <c-y>
 
-" stupid shift key
-noremap ; :
-noremap : ;
+" split navigation
+nnoremap H <c-w>h
+nnoremap J <c-w>j
+nnoremap K <c-w>k
+nnoremap L <c-w>l
 
 " jk to leave insert mode
 inoremap jk <Esc>

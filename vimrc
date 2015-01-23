@@ -238,10 +238,10 @@ noremap <down> <c-e>
 noremap <up> <c-y>
 
 " split navigation
-nnoremap H <c-w>h
-nnoremap J <c-w>j
-nnoremap K <c-w>k
-nnoremap L <c-w>l
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
 
 " jk to leave insert mode
 inoremap jk <Esc>

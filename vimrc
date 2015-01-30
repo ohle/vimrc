@@ -131,7 +131,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'bkad/CamelCaseMotion'
     Plug 'mileszs/ack.vim'
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
-    Plug 'ohle/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp', 'mkd', 'markdown', 'mkdc' ] }
+    "Plug 'ohle/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp', 'mkd', 'markdown', 'mkdc' ] }
     Plug 'corntrace/bufexplorer'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-dispatch'
@@ -169,6 +169,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'gregsexton/gitv'
     Plug 'tpope/vim-unimpaired'
     Plug 'pangloss/vim-javascript'
+    Plug 'craigemery/vim-autotag'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 

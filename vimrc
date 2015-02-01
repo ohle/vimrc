@@ -173,6 +173,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'ohle/vim-moin'
     Plug 'kablamo/vim-git-log'
     Plug 'sfiera/vim-emacsmodeline'
+    Plug 'ohle/underscore-templates.vim'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
     Plug 'groenewege/vim-less', { 'for': 'less' }
 call plug#end() " }}}

@@ -162,7 +162,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
     Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-    Plug 'fmoralesc/vim-pad', { 'on': 'Pad' }
+    Plug 'fmoralesc/vim-pad', { 'on': 'Pad', 'branch': 'devel' }
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
     Plug 'scrooloose/vim-statline'
@@ -170,6 +170,8 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-unimpaired'
     Plug 'pangloss/vim-javascript'
     Plug 'craigemery/vim-autotag'
+    Plug 'vim-script/moin.vim'
+    Plug 'kablamo/vim-git-log'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 

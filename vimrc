@@ -382,6 +382,8 @@ let g:slime_target = "tmux"
 let g:pad#dir = expand('~/Dropbox/vimpad/')
 let g:pad#local_dir = 'notes'
 let g:pad#use_default_mappings = 0
+let g:pad#default_file_extension = '.md'
+let g:pad#default_format = 'mkdc'
 
 " Haskell
 let g:haddock_browser=s:browserpath

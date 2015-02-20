@@ -170,7 +170,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-unimpaired'
     Plug 'pangloss/vim-javascript'
     Plug 'craigemery/vim-autotag'
-    Plug 'vim-scripts/moin.vim'
+    Plug 'rdodesigns/vim-moin'
     Plug 'kablamo/vim-git-log'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}

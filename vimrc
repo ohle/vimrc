@@ -379,11 +379,12 @@ let g:syntastic_javascript_checkers=['jshint']
 let g:slime_target = "tmux"
 
 " Vim-pad
-let g:pad#dir = expand('~/Dropbox/vimpad/')
+let g:pad#dir = expand('~/Dropbox/vimpad')
 let g:pad#local_dir = 'notes'
 let g:pad#use_default_mappings = 0
 let g:pad#default_file_extension = '.md'
 let g:pad#default_format = 'mkdc'
+let g:pad#window_height = 40
 
 " Haskell
 let g:haddock_browser=s:browserpath

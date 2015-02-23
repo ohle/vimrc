@@ -142,7 +142,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'Shougo/javacomplete', { 'for': 'java' }
     Plug 'leshill/vim-json', { 'for': 'json' }
     Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex', { 'for': 'json' }
-    Plug 'prurigro/vim-markdown-concealed', { 'for': [ 'markdown', 'mkd', 'mkdc' ] }
+    Plug 'plasticboy/vim-markdown', { 'for': [ 'markdown', 'mkd' ] }
     Plug 'tmhedberg/matchit'
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-repeat'
@@ -319,7 +319,7 @@ let s:browserpath = system("bash -c 'which google-chrome'")
 
 " brolink
 let g:bl_no_mappings=1
-let g:bl_pagefiletypes = ['html', 'javascript', 'php', 'markdown', 'mkdc']
+let g:bl_pagefiletypes = ['html', 'javascript', 'php', 'markdown']
 vnoremap <silent><Leader> bj :BLEvaluateSelection<CR>
 nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
 
@@ -383,7 +383,7 @@ let g:pad#dir = expand('~/Dropbox/vimpad')
 let g:pad#local_dir = 'notes'
 let g:pad#use_default_mappings = 0
 let g:pad#default_file_extension = '.md'
-let g:pad#default_format = 'mkdc'
+let g:pad#default_format = 'mkd'
 let g:pad#window_height = 40
 
 " Haskell

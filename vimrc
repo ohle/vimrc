@@ -40,7 +40,7 @@ set wildmode=longest,list,full " Tab-completion for filenames bash-style
 set textwidth=80
 set colorcolumn=+1
 set cursorline
-set windowheight=5 " minimal height
+set winheight=5 " minimal height
 
 syntax on       " syntax highlighting
 set background=dark

@@ -173,6 +173,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'craigemery/vim-autotag'
     Plug 'ohle/vim-moin'
     Plug 'kablamo/vim-git-log'
+    Plug 'sfiera/vim-emacsmodeline'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
 call plug#end() " }}}
 

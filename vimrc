@@ -132,7 +132,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'bkad/CamelCaseMotion'
     Plug 'mileszs/ack.vim'
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
-    "Plug 'ohle/browserlink.vim', { 'for': [ 'html', 'javscript', 'css', 'jsp', 'mkd', 'markdown', 'mkdc' ] }
     Plug 'corntrace/bufexplorer'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-dispatch'
@@ -143,7 +142,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'Shougo/javacomplete', { 'for': 'java' }
     Plug 'leshill/vim-json', { 'for': 'json' }
     Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex', { 'for': 'json' }
-    Plug 'plasticboy/vim-markdown', { 'for': [ 'markdown', 'mkd' ] }
+    Plug 'tpope/vim-markdown', { 'for': ['markdown', 'md', 'mkd'] }
     Plug 'tmhedberg/matchit'
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-repeat'
@@ -317,6 +316,8 @@ endfunction
 "}}}
 
 let s:browserpath = system("bash -c 'which google-chrome'")
+
+let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python']
 " Plugin options {{{
 
 " brolink

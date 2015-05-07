@@ -174,6 +174,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'kablamo/vim-git-log'
     Plug 'sfiera/vim-emacsmodeline'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
+    Plug 'groenewege/vim-less', { 'for': 'less' }
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

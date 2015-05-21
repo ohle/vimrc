@@ -375,10 +375,6 @@ let g:syntastic_mode_map =
 " Always update the location list after a syntax check
 let g:syntastic_always_populate_loc_list=1
 
-" select and configure checkers
-" javascript
-let g:syntastic_javascript_checkers=['jshint']
-
 " SLIME
 let g:slime_target = "tmux"
 

@@ -385,6 +385,7 @@ let g:pad#use_default_mappings = 0
 let g:pad#default_file_extension = '.md'
 let g:pad#default_format = 'mkd'
 let g:pad#window_height = 40
+let g:pad#highlight_query = 0
 
 " Haskell
 let g:haddock_browser=s:browserpath

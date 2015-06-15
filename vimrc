@@ -375,6 +375,9 @@ let g:syntastic_mode_map =
 " Always update the location list after a syntax check
 let g:syntastic_always_populate_loc_list=1
 
+" Configure checkers for filetypes
+let g:syntastic_python_checkers = ['pyflakes']
+
 " SLIME
 let g:slime_target = "tmux"
 

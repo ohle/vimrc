@@ -276,10 +276,6 @@ function! QuickFixToggle()
 endfunction
 "}}}
 
-" vim-pad
-nnoremap <leader>pl :Pad ls<cr>
-nnoremap <leader>ps :Pad new<cr>
-nnoremap <leader>pt :Pad this<cr>
 
 " Easy-align
 vmap <Enter> <Plug>(EasyAlign)

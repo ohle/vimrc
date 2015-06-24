@@ -158,7 +158,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-vinegar'
     Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-    Plug 'vim-scripts/ZoomWin'
     Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
     Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
@@ -276,6 +275,21 @@ function! QuickFixToggle()
 endfunction
 "}}}
 
+
+" Window zooming
+function! s:ZoomToggle() abort
+  if exists('t:zoomed') && t:zoomed
+    execute t:zoom_winrestcmd
+    let t:zoomed = 0
+  else
+    let t:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+    let t:zoomed = 1
+  endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-W>z :ZoomToggle<CR>
 
 " Easy-align
 vmap <Enter> <Plug>(EasyAlign)

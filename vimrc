@@ -137,7 +137,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
     Plug 'tpope/vim-fugitive'
-    Plug 'jaxbot/github-issues.vim'
     Plug 'sjl/gundo.vim'
     Plug 'Shougo/javacomplete', { 'for': 'java' }
     Plug 'leshill/vim-json', { 'for': 'json' }

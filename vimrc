@@ -141,7 +141,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'sjl/gundo.vim'
     Plug 'Shougo/javacomplete', { 'for': 'java' }
     Plug 'leshill/vim-json', { 'for': 'json' }
-    Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex', { 'for': 'json' }
+    Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
     Plug 'tpope/vim-markdown', { 'for': ['markdown', 'md', 'mkd'] }
     Plug 'tmhedberg/matchit'
     Plug 'tpope/vim-projectionist'

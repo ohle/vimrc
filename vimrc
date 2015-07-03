@@ -175,6 +175,7 @@ call plug#begin('~/.vim/bundle') " {{{
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
     Plug 'groenewege/vim-less', { 'for': 'less' }
     Plug 'freitass/todo.txt-vim'
+    Plug 'ivanov/vim-ipython', { 'for': 'python' }
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

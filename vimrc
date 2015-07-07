@@ -422,4 +422,12 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+
+" ipython
+let g:ipy_perform_mappings = 0
+map  <buffer> <silent> <C-Return>     <Plug>(IPython-RunFile)
+map  <buffer> <silent> <C-s>          <Plug>(IPython-RunLine)
+imap <buffer> <silent> <C-s>          <C-o><Plug>(IPython-RunLine)
+xmap <buffer> <silent> <C-S>          <Plug>(IPython-RunLines)
+xmap <buffer> <silent> <M-s>          <Plug>(IPython-RunLinesAsTopLevel)
 " }}} Plugin options

@@ -231,6 +231,7 @@ endif
 command Cd lcd %:p:h
 
 let mapleader = ","
+let maplocalleader = ","
 
 " Make Y behave like D and C
 noremap Y y$

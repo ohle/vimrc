@@ -149,7 +149,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
-    Plug 'scrooloose/syntastic'
     Plug 'junegunn/vim-easy-align'
     Plug 'kana/vim-textobj-lastpat'
     Plug 'kana/vim-textobj-user'
@@ -379,20 +378,6 @@ nnoremap <leader>u :GundoToggle<CR>
 " javacomplete
 setlocal omnifunc=javacomplete#Complete
 " setlocal completefunc=javacomplete#CompleteParamsInfo
-
-" Synsastic
-" disable for scala, since scala compilers are slow and sbt-quickfix does
-" basically the same thing but asynchronously
-let g:syntastic_mode_map =
-            \ { 'mode': 'active',
-                    \ 'active_filetypes': [],
-                    \ 'passive_filetypes': ['sbt', 'scala']
-                \}
-" Always update the location list after a syntax check
-let g:syntastic_always_populate_loc_list=1
-
-" Configure checkers for filetypes
-let g:syntastic_python_checkers = ['pyflakes']
 
 " SLIME
 let g:slime_target = "tmux"

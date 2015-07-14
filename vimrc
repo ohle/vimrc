@@ -174,6 +174,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'groenewege/vim-less', { 'for': 'less' }
     Plug 'freitass/todo.txt-vim'
     Plug 'ivanov/vim-ipython', { 'for': 'python' }
+    Plug 'benekastah/neomake'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -418,4 +419,13 @@ map  <buffer> <silent> <C-s>          <Plug>(IPython-RunLine)
 imap <buffer> <silent> <C-s>          <C-o><Plug>(IPython-RunLine)
 xmap <buffer> <silent> <C-S>          <Plug>(IPython-RunLines)
 xmap <buffer> <silent> <M-s>          <Plug>(IPython-RunLinesAsTopLevel)
+
+" Neomake
+autocmd! BufWritePost * Neomake
+
+let g:neomake_python_enabled_makers = ['pyflakes']
+let g:neomake_sh_enabled_makers = ['shellcheck']
+let g:neomake_zsh_enabled_makers = ['shellcheck']
+let g:neomake_latex_enabled_makers = ['lacheck']
+let g:neomake_tex_enabled_makers = ['lacheck']
 " }}} Plugin options

@@ -334,6 +334,10 @@ let s:browserpath = system("bash -c 'which google-chrome'")
 let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin']
 " Plugin options {{{
 
+" Ack
+" omit -s to be compatible with ack <= 2.0
+let g:ack_default_options = " -H --nocolor --nogroup --column"
+
 " brolink
 let g:bl_no_mappings=1
 let g:bl_pagefiletypes = ['html', 'javascript', 'php', 'markdown']

@@ -130,7 +130,7 @@ filetype plugin indent on
 " Manage plugins with vimplug
 call plug#begin('~/.vim/bundle') " {{{
     Plug 'bkad/CamelCaseMotion'
-    Plug 'mileszs/ack.vim'
+    Plug 'mhinz/vim-grepper'
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
     Plug 'corntrace/bufexplorer'
     Plug 'tpope/vim-commentary'
@@ -295,6 +295,10 @@ nnoremap <silent> <C-W>z :ZoomToggle<CR>
 " Easy-align
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga      <Plug>(EasyAlign)
+
+" grepper
+nmap gs <plug>Grepper
+vmap gs <plug>Grepper
 " }}}
 
 "Calculations: pipe visually selected area through bc {{{
@@ -332,10 +336,6 @@ let s:browserpath = system("bash -c 'which google-chrome'")
 
 let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin']
 " Plugin options {{{
-
-" Ack
-" omit -s to be compatible with ack <= 2.0
-let g:ack_default_options = " -H --nocolor --nogroup --column"
 
 " brolink
 let g:bl_no_mappings=1

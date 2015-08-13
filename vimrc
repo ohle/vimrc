@@ -137,11 +137,9 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
     Plug 'tpope/vim-fugitive'
-    Plug 'jaxbot/github-issues.vim'
     Plug 'sjl/gundo.vim'
-    Plug 'Shougo/javacomplete', { 'for': 'java' }
     Plug 'leshill/vim-json', { 'for': 'json' }
-    Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex', { 'for': 'json' }
+    Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
     Plug 'tpope/vim-markdown', { 'for': ['markdown', 'md', 'mkd'] }
     Plug 'tmhedberg/matchit'
     Plug 'tpope/vim-projectionist'
@@ -151,14 +149,12 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
-    Plug 'scrooloose/syntastic'
     Plug 'junegunn/vim-easy-align'
     Plug 'kana/vim-textobj-lastpat'
     Plug 'kana/vim-textobj-user'
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-vinegar'
     Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-    Plug 'vim-scripts/ZoomWin'
     Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
     Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
@@ -177,6 +173,9 @@ call plug#begin('~/.vim/bundle') " {{{
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
     Plug 'groenewege/vim-less', { 'for': 'less' }
     Plug 'tpope/vim-eunuch'
+    Plug 'freitass/todo.txt-vim'
+    Plug 'ivanov/vim-ipython', { 'for': 'python' }
+    Plug 'benekastah/neomake'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -233,6 +232,7 @@ endif
 command Cd lcd %:p:h
 
 let mapleader = ","
+let maplocalleader = ","
 
 " Make Y behave like D and C
 noremap Y y$
@@ -277,10 +277,21 @@ function! QuickFixToggle()
 endfunction
 "}}}
 
-" vim-pad
-nnoremap <leader>pl :Pad ls<cr>
-nnoremap <leader>ps :Pad new<cr>
-nnoremap <leader>pt :Pad this<cr>
+
+" Window zooming
+function! s:ZoomToggle() abort
+  if exists('t:zoomed') && t:zoomed
+    execute t:zoom_winrestcmd
+    let t:zoomed = 0
+  else
+    let t:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+    let t:zoomed = 1
+  endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-W>z :ZoomToggle<CR>
 
 " Easy-align
 vmap <Enter> <Plug>(EasyAlign)
@@ -320,8 +331,12 @@ endfunction
 
 let s:browserpath = system("bash -c 'which google-chrome'")
 
-let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'latex', 'moinmoin']
+let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin']
 " Plugin options {{{
+
+" Ack
+" omit -s to be compatible with ack <= 2.0
+let g:ack_default_options = " -H --nocolor --nogroup --column"
 
 " brolink
 let g:bl_no_mappings=1
@@ -366,20 +381,6 @@ nnoremap <leader>u :GundoToggle<CR>
 setlocal omnifunc=javacomplete#Complete
 " setlocal completefunc=javacomplete#CompleteParamsInfo
 
-" Synsastic
-" disable for scala, since scala compilers are slow and sbt-quickfix does
-" basically the same thing but asynchronously
-let g:syntastic_mode_map =
-            \ { 'mode': 'active',
-                    \ 'active_filetypes': [],
-                    \ 'passive_filetypes': ['sbt', 'scala']
-                \}
-" Always update the location list after a syntax check
-let g:syntastic_always_populate_loc_list=1
-
-" Configure checkers for filetypes
-let g:syntastic_python_checkers = ['pyflakes']
-
 " SLIME
 let g:slime_target = "tmux"
 
@@ -415,4 +416,21 @@ let g:airline_mode_map = {
 " fireplace
 " Enable starting a leiningen repl outside a project for files in /tmp
 autocmd User FireplacePreConnect call fireplace#register_port_file(expand('~/.lein/repl-port'), '/tmp')
+
+" ipython
+let g:ipy_perform_mappings = 0
+map  <buffer> <silent> <C-Return>     <Plug>(IPython-RunFile)
+map  <buffer> <silent> <C-s>          <Plug>(IPython-RunLine)
+imap <buffer> <silent> <C-s>          <C-o><Plug>(IPython-RunLine)
+xmap <buffer> <silent> <C-S>          <Plug>(IPython-RunLines)
+xmap <buffer> <silent> <M-s>          <Plug>(IPython-RunLinesAsTopLevel)
+
+" Neomake
+autocmd! BufWritePost * Neomake
+
+let g:neomake_python_enabled_makers = ['pyflakes']
+let g:neomake_sh_enabled_makers = ['shellcheck']
+let g:neomake_zsh_enabled_makers = ['shellcheck']
+let g:neomake_latex_enabled_makers = ['lacheck']
+let g:neomake_tex_enabled_makers = ['lacheck']
 " }}} Plugin options

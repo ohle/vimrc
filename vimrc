@@ -411,4 +411,8 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+
+" fireplace
+" Enable starting a leiningen repl outside a project for files in /tmp
+autocmd User FireplacePreConnect call fireplace#register_port_file(expand('~/.lein/repl-port'), '/tmp')
 " }}} Plugin options

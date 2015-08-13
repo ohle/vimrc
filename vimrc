@@ -176,6 +176,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'ohle/underscore-templates.vim'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
     Plug 'groenewege/vim-less', { 'for': 'less' }
+    Plug 'tpope/vim-eunuch'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

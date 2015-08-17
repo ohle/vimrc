@@ -172,6 +172,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'ohle/underscore-templates.vim'
     " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
     Plug 'groenewege/vim-less', { 'for': 'less' }
+    Plug 'tpope/vim-eunuch'
     Plug 'freitass/todo.txt-vim'
     Plug 'ivanov/vim-ipython', { 'for': 'python' }
     Plug 'benekastah/neomake'
@@ -411,6 +412,10 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+
+" fireplace
+" Enable starting a leiningen repl outside a project for files in /tmp
+autocmd User FireplacePreConnect call fireplace#register_port_file(expand('~/.lein/repl-port'), '/tmp')
 
 " ipython
 let g:ipy_perform_mappings = 0

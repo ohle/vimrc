@@ -136,6 +136,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+    Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
     Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
     Plug 'tpope/vim-fugitive'
     Plug 'sjl/gundo.vim'

@@ -109,6 +109,7 @@ set smartcase
 "set iskeyword+=32,-
 
 set nrformats=hex " no octal, please
+set formatoptions+=j
 
 set clipboard=unnamed
 

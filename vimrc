@@ -140,6 +140,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-dispatch'
     Plug 'radenling/vim-dispatch-neovim'
     Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+    Plug 'tpope/vim-salve'
     Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
     Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
     Plug 'tpope/vim-fugitive'

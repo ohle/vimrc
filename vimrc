@@ -96,6 +96,7 @@ set grepprg=grep\ -nH\ $*
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 " always change current dir to dir of currently edited file
 " set autochdir

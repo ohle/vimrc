@@ -152,7 +152,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-repeat'
     Plug 'mdreves/vim-scaladoc', { 'for': 'scala' }
-    Plug 'tpope/vim-sleuth'
     Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'

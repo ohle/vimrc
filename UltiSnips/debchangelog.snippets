@@ -1,0 +1,33 @@
+global !p
+from subprocess import Popen, PIPE
+import re
+
+parsed = {}
+newversion = ""
+
+def parse():
+    global newversion
+    global parsed
+
+    output = Popen(["dpkg-parsechangelog", "-c1", "-l%s" % path], stdout=PIPE)
+    for line in output.stdout.readlines():
+        try:
+            (key, value) = line.split(':')
+            parsed[key] = value.strip()
+        except:
+            pass
+    version = re.findall(r'[0-9]+', parsed['Version'])
+    incfragment = int(version[-1]) + 1
+    newversion = re.sub(version[-1] + r'([^0-9]*)$', str(incfragment) + r'\1', parsed['Version'])
+
+parse()
+endglobal
+
+snippet '(log|new)' "New log entry" bmr
+`!p snip.rv=parsed['Source']` (${1:`!p snip.rv=newversion`}) `!p snip.rv=parsed['Distribution']`; urgency=${2:`!p snip.rv=parsed['Urgency']`}
+
+  * $0
+
+ -- `!p snip.rv=parsed['Maintainer']`  `date -R` 
+
+endsnippet

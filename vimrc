@@ -347,7 +347,7 @@ endfunction
 
 let s:browserpath = system("bash -c 'which google-chrome'")
 
-let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin']
+let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin', 'clojure']
 " Plugin options {{{
 
 " brolink

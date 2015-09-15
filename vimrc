@@ -181,9 +181,9 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'groenewege/vim-less', { 'for': 'less' }
     Plug 'tpope/vim-eunuch'
     Plug 'freitass/todo.txt-vim'
-    Plug 'ivanov/vim-ipython', { 'for': 'python' }
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
+    Plug 'klen/python-mode', { 'for': 'python' }
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

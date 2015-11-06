@@ -152,7 +152,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tmhedberg/matchit'
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-repeat'
-    Plug 'mdreves/vim-scaladoc', { 'for': 'scala' }
     Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
@@ -177,7 +176,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'kablamo/vim-git-log'
     Plug 'sfiera/vim-emacsmodeline'
     Plug 'ohle/underscore-templates.vim'
-    " Plug '~/.vim/bundle/vim-sbt' " TODO: Move to external dir
     Plug 'groenewege/vim-less', { 'for': 'less' }
     Plug 'tpope/vim-eunuch'
     Plug 'freitass/todo.txt-vim'

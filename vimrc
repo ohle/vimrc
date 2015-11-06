@@ -184,6 +184,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
     Plug 'klen/python-mode', { 'for': 'python' }
+    Plug 'embear/vim-localvimrc'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

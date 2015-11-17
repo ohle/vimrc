@@ -446,7 +446,42 @@ let g:neomake_zsh_enabled_makers = ['shellcheck']
 let g:neomake_latex_enabled_makers = ['lacheck']
 let g:neomake_tex_enabled_makers = ['lacheck']
 
+let g:neomake_makegcc_maker = {
+  \ 'exe': 'make',
+  \ 'buffer_output': 1,
+  \ 'errorformat': 
+    \ '%*[^\"]\"%f\"%*\\D%l:%c:\ %m,' .
+    \ '%*[^\"]\"%f\"%*\\D%l:\ %m,' .
+    \ '\"%f\"%*\\D%l:%c:\ %m,' .
+    \ '\"%f\"%*\\D%l:\ %m,' .
+    \ '%-G%f:%l:\ %trror:\ (Each\ undeclared\ identifier\ is\ reported\ only\ once,' .
+    \ '%-G%f:%l:\ %trror:\ for\ each\ function\ it\ appears\ in.),' .
+    \ '%f:%l:%c:\ %trror:\ %m,' .
+    \ '%f:%l:%c:\ %tarning:\ %m,' .
+    \ '%f:%l:%c:\ %m,' .
+    \ '%f:%l:\ %trror:\ %m,' .
+    \ '%f:%l:\ %tarning:\ %m,' .
+    \ '%f:%l:\ %m,' .
+    \ '\"%f\"\\,\ line\ %l%*\\D%c%*[^\ ]\ %m,' .
+    \ '%D%*\\a[%*\\d]:\ Entering\ directory\ [`'']%f'',' .
+    \ '%X%*\\a[%*\\d]:\ Leaving\ directory\ [`'']%f'',' .
+    \ '%D%*\\a:\ Entering\ directory\ [`'']%f'',' .
+    \ '%X%*\\a:\ Leaving\ directory\ [`'']%f'',' .
+    \ '%DMaking\ %*\\a\ in\ %f'
+    \}
+
+
 " grepper
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 " }}} Plugin options
+"
+if has('mac')
+    let s:browse_cmd = 'open'
+else
+    let s:browse_cmd = 'xdg-open'
+endif
+
+command BrowseBug call system(s:browse_cmd . ' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=' . expand('<cword>'))
+" command BrowseBug call system(s:browse_cmd . expand(' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=<cword>'))
+nnoremap gb :BrowseBug<cr>

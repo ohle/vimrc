@@ -184,6 +184,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'ivanov/vim-ipython', { 'for': 'python' }
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
+    Plug 'asenac/vim-opengrok'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

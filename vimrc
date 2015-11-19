@@ -485,3 +485,5 @@ endif
 command BrowseBug call system(s:browse_cmd . ' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=' . expand('<cword>'))
 " command BrowseBug call system(s:browse_cmd . expand(' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=<cword>'))
 nnoremap gb :BrowseBug<cr>
+
+runtime local-settings.vim

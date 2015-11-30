@@ -185,6 +185,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
     Plug 'asenac/vim-opengrok'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

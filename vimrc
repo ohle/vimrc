@@ -187,6 +187,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'asenac/vim-opengrok'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
+    Plug 'klen/python-mode'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -477,6 +478,14 @@ let g:neomake_makegcc_maker = {
 " grepper
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
+
+" python-mode
+" python-mode has some very invasive defaults...
+let g:pymode_folding = 0
+let g:pymode_options = 0
+let g:pymode_trim_whitespaces = 0
+let g:pymode_lint_checkers = ['pyflakes']
+let g:pymode_rope_goto_definition_bind = '<C-]>'
 " }}} Plugin options
 "
 if has('mac')

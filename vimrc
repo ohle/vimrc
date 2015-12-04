@@ -50,6 +50,8 @@ set conceallevel=2
 "C-N to clear search highlighting
 nnoremap <silent> <C-N> :silent noh<CR>
 
+set noequalalways
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 

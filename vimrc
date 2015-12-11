@@ -506,4 +506,6 @@ if has('nvim')
 endif
 " }}}
 
+let $PAGER=''
+
 runtime local-settings.vim

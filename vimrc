@@ -186,7 +186,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'ivanov/vim-ipython', { 'for': 'python' }
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
-    Plug 'asenac/vim-opengrok'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'klen/python-mode'

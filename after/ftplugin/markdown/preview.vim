@@ -10,7 +10,7 @@ endif
 let b:did_markdown_preview_ftplugin = 1
 
 if !exists('g:markdown_preview_browser')
-    let g:markdown_preview_browser = 'google-chrome'
+    let g:markdown_preview_browser = 'xdg-open'
 endif
 
 let b:basedir = expand('%:p:h')

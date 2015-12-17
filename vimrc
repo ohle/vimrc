@@ -183,6 +183,9 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'terryma/vim-expand-region'
     Plug 'klen/python-mode', { 'for': 'python' }
     Plug 'embear/vim-localvimrc'
+    if has('mac')
+        Plug 'rizzatti/dash.vim'
+    endif
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

@@ -50,6 +50,8 @@ set conceallevel=2
 "C-N to clear search highlighting
 nnoremap <silent> <C-N> :silent noh<CR>
 
+set noequalalways
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -186,6 +188,9 @@ call plug#begin('~/.vim/bundle') " {{{
     if has('mac')
         Plug 'rizzatti/dash.vim'
     endif
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    Plug 'klen/python-mode'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -448,7 +453,60 @@ let g:neomake_zsh_enabled_makers = ['shellcheck']
 let g:neomake_latex_enabled_makers = ['lacheck']
 let g:neomake_tex_enabled_makers = ['lacheck']
 
+let g:neomake_makegcc_maker = {
+  \ 'exe': 'make',
+  \ 'buffer_output': 1,
+  \ 'errorformat': 
+    \ '%*[^\"]\"%f\"%*\\D%l:%c:\ %m,' .
+    \ '%*[^\"]\"%f\"%*\\D%l:\ %m,' .
+    \ '\"%f\"%*\\D%l:%c:\ %m,' .
+    \ '\"%f\"%*\\D%l:\ %m,' .
+    \ '%-G%f:%l:\ %trror:\ (Each\ undeclared\ identifier\ is\ reported\ only\ once,' .
+    \ '%-G%f:%l:\ %trror:\ for\ each\ function\ it\ appears\ in.),' .
+    \ '%f:%l:%c:\ %trror:\ %m,' .
+    \ '%f:%l:%c:\ %tarning:\ %m,' .
+    \ '%f:%l:%c:\ %m,' .
+    \ '%f:%l:\ %trror:\ %m,' .
+    \ '%f:%l:\ %tarning:\ %m,' .
+    \ '%f:%l:\ %m,' .
+    \ '\"%f\"\\,\ line\ %l%*\\D%c%*[^\ ]\ %m,' .
+    \ '%D%*\\a[%*\\d]:\ Entering\ directory\ [`'']%f'',' .
+    \ '%X%*\\a[%*\\d]:\ Leaving\ directory\ [`'']%f'',' .
+    \ '%D%*\\a:\ Entering\ directory\ [`'']%f'',' .
+    \ '%X%*\\a:\ Leaving\ directory\ [`'']%f'',' .
+    \ '%DMaking\ %*\\a\ in\ %f'
+    \}
+
+
 " grepper
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
+
+" python-mode
+" python-mode has some very invasive defaults...
+let g:pymode_folding = 0
+let g:pymode_options = 0
+let g:pymode_trim_whitespaces = 0
+let g:pymode_lint_checkers = ['pyflakes']
+let g:pymode_rope_goto_definition_bind = '<C-]>'
 " }}} Plugin options
+"
+if has('mac')
+    let s:browse_cmd = 'open'
+else
+    let s:browse_cmd = 'xdg-open'
+endif
+
+command BrowseBug call system(s:browse_cmd . ' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=' . expand('<cword>'))
+" command BrowseBug call system(s:browse_cmd . expand(' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=<cword>'))
+nnoremap gb :BrowseBug<cr>
+
+" neovim terminal mode mappings and stuff {{{
+if has('nvim')
+    tnoremap <Esc><Esc> <C-\><C-n>
+endif
+" }}}
+
+let $PAGER=''
+
+runtime local-settings.vim

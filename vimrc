@@ -191,6 +191,8 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'klen/python-mode'
+    Plug 'clausreinke/typescript-tools.vim'
+    Plug 'leafgarland/typescript-vim'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -489,6 +491,17 @@ let g:pymode_options = 0
 let g:pymode_trim_whitespaces = 0
 let g:pymode_lint_checkers = ['pyflakes']
 let g:pymode_rope_goto_definition_bind = '<C-]>'
+
+" tsstools
+augroup tsstools
+    au!
+    au BufWritePost typescript :TSSupdate
+    au FileType typescript nnoremap <buffer> <Leader>s :TSSsymbol
+    au FileType typescript nnoremap <buffer> <Leader>t :TSStype
+    au FileType typescript nnoremap <buffer> <C-w>} :TSSdefpreview
+    au FileType typescript nnoremap <buffer> <C-]> :TSSdef
+augroup END
+
 " }}} Plugin options
 "
 if has('mac')

@@ -455,7 +455,7 @@ let g:neomake_sh_enabled_makers = ['shellcheck']
 let g:neomake_zsh_enabled_makers = ['shellcheck']
 let g:neomake_latex_enabled_makers = ['lacheck']
 let g:neomake_tex_enabled_makers = ['lacheck']
-let g:neomake_typescript_makers = ['tsc']
+let g:neomake_typescript_enabled_makers = ['tsc']
 
 let g:neomake_makegcc_maker = {
   \ 'exe': 'make',

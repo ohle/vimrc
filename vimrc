@@ -193,6 +193,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'klen/python-mode'
     Plug 'clausreinke/typescript-tools.vim'
     Plug 'leafgarland/typescript-vim'
+    Plug 'tpope/vim-scriptease'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

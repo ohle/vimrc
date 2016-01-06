@@ -497,10 +497,10 @@ let g:pymode_rope_goto_definition_bind = '<C-]>'
 augroup tsstools
     au!
     au BufWritePost typescript :TSSupdate
-    au FileType typescript nnoremap <buffer> <Leader>s :TSSsymbol
-    au FileType typescript nnoremap <buffer> <Leader>t :TSStype
-    au FileType typescript nnoremap <buffer> <C-w>} :TSSdefpreview
-    au FileType typescript nnoremap <buffer> <C-]> :TSSdef
+    au FileType typescript nnoremap <buffer> <Leader>s :TSSsymbol<cr>
+    au FileType typescript nnoremap <buffer> <Leader>t :TSStype<cr>
+    au FileType typescript nnoremap <buffer> <C-w>} :TSSdefpreview<cr>
+    au FileType typescript nnoremap <buffer> <C-]> :TSSdef<cr>
 augroup END
 
 " }}} Plugin options

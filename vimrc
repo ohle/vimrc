@@ -269,6 +269,15 @@ nnoremap <leader>j <c-w>j
 nnoremap <leader>k <c-w>k
 nnoremap <leader>l <c-w>l
 
+if has("nvim")
+    tnoremap <leader>h <c-\><c-n> <c-w>h
+    tnoremap <leader>j <c-\><c-n> <c-w>j
+    tnoremap <leader>k <c-\><c-n> <c-w>k
+    tnoremap <leader>l <c-\><c-n> <c-w>l
+
+    tnoremap <Esc> <c-\><c-n>
+endif
+
 " jk to leave insert mode
 inoremap jk <Esc>
 

@@ -194,6 +194,10 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'clausreinke/typescript-tools.vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'tpope/vim-scriptease'
+    if exists('g:nyaovim_version')
+        Plug 'rhysd/nyaovim-popup-tooltip'
+        Plug 'rhysd/nyaovim-markdown-preview'
+    endif
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

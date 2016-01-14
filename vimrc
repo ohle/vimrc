@@ -154,7 +154,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tmhedberg/matchit'
     Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-repeat'
-    Plug 'altercation/vim-colors-solarized'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
     Plug 'junegunn/vim-easy-align'
@@ -198,10 +197,11 @@ call plug#begin('~/.vim/bundle') " {{{
         Plug 'rhysd/nyaovim-popup-tooltip'
         Plug 'rhysd/nyaovim-markdown-preview'
     endif
+    Plug 'romainl/flattened'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme flattened_dark
 highlight clear SignColumn
 
 " Enable mouse in terminal mode (for resizing splits etc.)
@@ -432,6 +432,7 @@ let g:pad#highlight_query = 0
 let g:haddock_browser=s:browserpath
 
 " airline
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#default#section_truncate_width = {}
 let g:airline_mode_map = {

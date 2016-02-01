@@ -168,6 +168,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'fmoralesc/vim-pad', { 'on': 'Pad', 'branch': 'devel' }
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'scrooloose/vim-statline'
     Plug 'gregsexton/gitv'
     Plug 'tpope/vim-unimpaired'

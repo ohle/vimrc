@@ -199,6 +199,7 @@ call plug#begin('~/.vim/bundle') " {{{
         Plug 'rhysd/nyaovim-markdown-preview'
     endif
     Plug 'romainl/flattened'
+    Plug 'easymotion/vim-easymotion'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

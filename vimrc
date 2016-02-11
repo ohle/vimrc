@@ -133,6 +133,14 @@ endif
 
 filetype plugin indent on
 
+" Use @ in visual mode to apply macro to matching selected lines
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+function! ExecuteMacroOverVisualRange()
+    echo "@".getcmdline()
+    execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
 " Manage plugins with vimplug
 call plug#begin('~/.vim/bundle') " {{{
     Plug 'bkad/CamelCaseMotion'

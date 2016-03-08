@@ -12,12 +12,17 @@ function! s:surround(text)
 endfunction
 
 function! s:getInput(type)
-    if a:type ==# 'visual'
-        execute "normal! `<v`>y"
-    else
-        execute "normal! `[v`]y"
-    endif
+    call s:select(a:type)
+    normal y
     return s:surround(@@)
+endfunction
+
+function! s:select(type)
+    if a:type ==# 'visual'
+        execute "normal! `<v`>"
+    else
+        execute "normal! `[v`]"
+    endif
 endfunction
 
 function! s:show(type)
@@ -27,6 +32,17 @@ function! s:show(type)
     call netrw#BrowseX(outfile, 0)
 endfunction
 
+function! s:convert(type)
+    let input=s:getInput(a:type)
+    let outfile=tempname()
+    silent call system("plantuml -p -tutxt >" . outfile, input)
+    execute "read " . outfile
+endfunction
 
-nnoremap <leader>p :set operatorfunc=<SID>show<cr>g@
-vnoremap <leader>p :<c-u>call <SID>show("visual")<cr>
+
+
+nnoremap <leader>u :set operatorfunc=<SID>show<cr>g@
+vnoremap <leader>u :<c-u>call <SID>show("visual")<cr>
+
+nnoremap <leader>U :set operatorfunc=<SID>convert<cr>g@
+vnoremap <leader>U :<c-u>call <SID>convert("visual")<cr>

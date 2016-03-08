@@ -12,7 +12,7 @@ function! s:surround(text)
 endfunction
 
 function! Convert(type)
-    if a:type == 'v'
+    if a:type ==# 'visual'
         execute "normal! `<v`>y"
     else
         execute "normal! `[v`]y"
@@ -24,4 +24,4 @@ function! Convert(type)
 endfunction
 
 nnoremap <leader>p :set operatorfunc=Convert<cr>g@
-vnoremap <leader>p :<c-u>call Convert(visualmode())<cr>
+vnoremap <leader>p :<c-u>call Convert("visual")<cr>

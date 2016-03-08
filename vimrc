@@ -208,6 +208,7 @@ call plug#begin('~/.vim/bundle') " {{{
     endif
     Plug 'romainl/flattened'
     Plug 'easymotion/vim-easymotion'
+    Plug 'aklt/plantuml-syntax'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -380,7 +381,7 @@ endfunction
 
 let s:browserpath = system("bash -c 'which google-chrome'")
 
-let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin', 'clojure']
+let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin', 'clojure', 'plantuml']
 " Plugin options {{{
 
 " brolink

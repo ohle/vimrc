@@ -11,17 +11,22 @@ function! s:surround(text)
     return "@startuml\n" . a:text . "\n@enduml"
 endfunction
 
-function! Convert(type)
+function! s:getInput(type)
     if a:type ==# 'visual'
         execute "normal! `<v`>y"
     else
         execute "normal! `[v`]y"
     endif
-    let input=s:surround(@@)
+    return s:surround(@@)
+endfunction
+
+function! s:show(type)
+    let input=s:getInput(a:type)
     let outfile=tempname()
     silent call system("plantuml -p -tpng >" . outfile, input)
     call netrw#BrowseX(outfile, 0)
 endfunction
 
-nnoremap <leader>p :set operatorfunc=Convert<cr>g@
-vnoremap <leader>p :<c-u>call Convert("visual")<cr>
+
+nnoremap <leader>p :set operatorfunc=<SID>show<cr>g@
+vnoremap <leader>p :<c-u>call <SID>show("visual")<cr>

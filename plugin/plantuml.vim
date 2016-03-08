@@ -12,37 +12,32 @@ function! s:surround(text)
 endfunction
 
 function! s:getInput(type)
-    call s:select(a:type)
-    normal y
+    if a:type ==# 'visual'
+        execute "normal! `<v`>y"
+    else
+        execute "normal! `[v`]y"
+    endif
     return s:surround(@@)
 endfunction
 
-function! s:select(type)
-    if a:type ==# 'visual'
-        execute "normal! `<v`>"
-    else
-        execute "normal! `[v`]"
-    endif
-endfunction
-
-function! s:show(type)
+function! s:showImage(type)
     let input=s:getInput(a:type)
     let outfile=tempname()
     silent call system("plantuml -p -tpng >" . outfile, input)
     call netrw#BrowseX(outfile, 0)
 endfunction
 
-function! s:convert(type)
+function! s:showText(type)
     let input=s:getInput(a:type)
     let outfile=tempname()
     silent call system("plantuml -p -tutxt >" . outfile, input)
-    execute "read " . outfile
+    execute "pedit " . outfile
 endfunction
 
 
 
-nnoremap <leader>u :set operatorfunc=<SID>show<cr>g@
-vnoremap <leader>u :<c-u>call <SID>show("visual")<cr>
+nnoremap <leader>U :set operatorfunc=<SID>showImage<cr>g@
+vnoremap <leader>U :<c-u>call <SID>showImage("visual")<cr>
 
-nnoremap <leader>U :set operatorfunc=<SID>convert<cr>g@
-vnoremap <leader>U :<c-u>call <SID>convert("visual")<cr>
+nnoremap <leader>u :set operatorfunc=<SID>showText<cr>g@
+vnoremap <leader>u :<c-u>call <SID>showText("visual")<cr>

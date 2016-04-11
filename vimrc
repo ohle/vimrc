@@ -209,6 +209,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'romainl/flattened'
     Plug 'easymotion/vim-easymotion'
     Plug 'aklt/plantuml-syntax'
+    Plug 'artur-shaik/vim-javacomplete2'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -424,7 +425,12 @@ let g:bufExplorerShowTabBuffer=1
 nnoremap <leader>u :GundoToggle<CR>
 
 " javacomplete
-setlocal omnifunc=javacomplete#Complete
+augroup javacomplete
+    au!
+    au FileType java setlocal omnifunc=javacomplete#Complete
+    au FileType java nnoremap <C-I> <Plug>(JavaComplete-Imports-AddMissing)
+augroup END
+
 " setlocal completefunc=javacomplete#CompleteParamsInfo
 
 " SLIME

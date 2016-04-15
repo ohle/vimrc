@@ -1,4 +1,4 @@
-set guifont=Terminus\ 9
+set guifont=Terminess\ Powerline\ Medium\ 9
 colorscheme solarized
 set background=dark
 set guioptions=acegimrLtT

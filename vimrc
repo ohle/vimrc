@@ -210,6 +210,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'aklt/plantuml-syntax'
     Plug 'artur-shaik/vim-javacomplete2'
     Plug 'vim-ctrlspace/vim-ctrlspace'
+    Plug 'mustache/vim-mustache-handlebars'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

@@ -146,7 +146,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'bkad/CamelCaseMotion'
     Plug 'mhinz/vim-grepper'
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
-    Plug 'corntrace/bufexplorer'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-dispatch'
     Plug 'radenling/vim-dispatch-neovim'
@@ -210,6 +209,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'easymotion/vim-easymotion'
     Plug 'aklt/plantuml-syntax'
     Plug 'artur-shaik/vim-javacomplete2'
+    Plug 'vim-ctrlspace/vim-ctrlspace'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -417,10 +417,6 @@ let g:projectionist_heuristics =
       \}
 
 
-" bufexplorer
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerShowTabBuffer=1
-
 " gundo
 nnoremap <leader>u :GundoToggle<CR>
 
@@ -534,6 +530,14 @@ augroup tsstools
     au FileType typescript nnoremap <buffer> <C-w>} :TSSdefpreview<cr>
     au FileType typescript nnoremap <buffer> <C-]> :TSSdef<cr>
 augroup END
+
+
+" ctrl-space
+set hidden
+set showtabline=0
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
 
 " }}} Plugin options
 "

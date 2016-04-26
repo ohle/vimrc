@@ -539,6 +539,9 @@ if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
 
+tnoremap <c-space> <c-\><c-n><c-space>
+tnoremap <c-@> <c-\><c-n><c-space>
+
 " }}} Plugin options
 "
 if has('mac')

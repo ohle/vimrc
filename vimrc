@@ -546,6 +546,7 @@ if !has("gui_running") && !has("win32")
 endif
 
 silent! exe 'tnoremap <silent>' . s:ctrlSpaceKey . ' <C-\><C-n>:CtrlSpace<CR>'
+silent! exe 'inoremap <silent>' . s:ctrlSpaceKey . ' <Esc>:CtrlSpace<CR>'
 
 " }}} Plugin options
 "

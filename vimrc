@@ -555,10 +555,6 @@ command BrowseBug call system(s:browse_cmd . ' https://bugzilla.berlin.jpk.com/s
 " command BrowseBug call system(s:browse_cmd . expand(' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=<cword>'))
 nnoremap gb :BrowseBug<cr>
 
-" neovim terminal mode mappings and stuff {{{
-if has('nvim')
-    tnoremap <Esc><Esc> <C-\><C-n>
-endif
 " }}}
 
 let $PAGER=''

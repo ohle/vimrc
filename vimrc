@@ -540,8 +540,12 @@ if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
 
-tnoremap <c-space> <c-\><c-n><c-space>
-tnoremap <c-@> <c-\><c-n><c-space>
+let s:ctrlSpaceKey = "<C-Space>"
+if !has("gui_running") && !has("win32")
+    let s:ctrlSpaceKey = "<Nul>"
+endif
+
+silent! exe 'tnoremap <silent>' . s:ctrlSpaceKey . ' <C-\><C-n>:CtrlSpace<CR>'
 
 " }}} Plugin options
 "

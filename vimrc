@@ -567,6 +567,7 @@ if !has("gui_running") && !has("win32") && !exists('g:nyaovim_version')
     let s:ctrlSpaceKey = "<Nul>"
 endif
 
+silent! exe 'nnoremap <silent>' . s:ctrlSpaceKey . ' :CtrlSpace<CR>'
 silent! exe 'tnoremap <silent>' . s:ctrlSpaceKey . ' <C-\><C-n>:CtrlSpace<CR>'
 silent! exe 'inoremap <silent>' . s:ctrlSpaceKey . ' <Esc>:CtrlSpace<CR>'
 

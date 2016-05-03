@@ -563,7 +563,7 @@ if executable("ag")
 endif
 
 let s:ctrlSpaceKey = "<C-Space>"
-if !has("gui_running") && !has("win32")
+if !has("gui_running") && !has("win32") && !exists('g:nyaovim_version')
     let s:ctrlSpaceKey = "<Nul>"
 endif
 

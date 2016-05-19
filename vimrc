@@ -163,7 +163,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
-    Plug 'junegunn/vim-easy-align'
     Plug 'kana/vim-textobj-lastpat'
     Plug 'kana/vim-textobj-user'
     Plug 'SirVer/ultisnips'
@@ -211,6 +210,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'artur-shaik/vim-javacomplete2'
     Plug 'vim-ctrlspace/vim-ctrlspace'
     Plug 'mustache/vim-mustache-handlebars'
+    Plug 'tommcdo/vim-lion'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -358,10 +358,6 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-W>z :ZoomToggle<CR>
-
-" Easy-align
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga      <Plug>(EasyAlign)
 
 " grepper
 nmap gs <plug>Grepper

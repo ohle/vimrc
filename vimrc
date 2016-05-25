@@ -211,6 +211,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'vim-ctrlspace/vim-ctrlspace'
     Plug 'mustache/vim-mustache-handlebars'
     Plug 'tommcdo/vim-lion'
+    Plug 'jimsei/winresizer'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -565,6 +566,10 @@ endif
 
 silent! exe 'tnoremap <silent>' . s:ctrlSpaceKey . ' <C-\><C-n>:CtrlSpace<CR>'
 silent! exe 'inoremap <silent>' . s:ctrlSpaceKey . ' <Esc>:CtrlSpace<CR>'
+
+" winresizer
+let g:winresizer_vert_resize=1
+let g:winresizer_horiz_resize=1
 
 " }}} Plugin options
 "

@@ -197,8 +197,8 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'klen/python-mode'
-    Plug 'clausreinke/typescript-tools.vim'
     Plug 'leafgarland/typescript-vim'
+    Plug 'Quramy/tduquyomi'
     Plug 'tpope/vim-scriptease'
     if exists('g:nyaovim_version')
         Plug 'rhysd/nyaovim-popup-tooltip'
@@ -540,17 +540,6 @@ let g:pymode_options = 0
 let g:pymode_trim_whitespaces = 0
 let g:pymode_lint_checkers = ['pyflakes']
 let g:pymode_rope_goto_definition_bind = '<C-]>'
-
-" tsstools
-augroup tsstools
-    au!
-    au BufWritePost typescript :TSSupdate
-    au FileType typescript nnoremap <buffer> <Leader>s :TSSsymbol<cr>
-    au FileType typescript nnoremap <buffer> <Leader>t :TSStype<cr>
-    au FileType typescript nnoremap <buffer> <C-w>} :TSSdefpreview<cr>
-    au FileType typescript nnoremap <buffer> <C-]> :TSSdef<cr>
-augroup END
-
 
 " ctrl-space
 set hidden

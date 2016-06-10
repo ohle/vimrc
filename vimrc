@@ -205,7 +205,7 @@ call plug#begin('~/.vim/bundle') " {{{
         Plug 'rhysd/nyaovim-markdown-preview'
     endif
     Plug 'romainl/flattened'
-    Plug 'easymotion/vim-easymotion'
+    Plug 'justinmk/vim-sneak'
     Plug 'aklt/plantuml-syntax'
     Plug 'artur-shaik/vim-javacomplete2'
     Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -559,6 +559,9 @@ silent! exe 'inoremap <silent>' . s:ctrlSpaceKey . ' <Esc>:CtrlSpace<CR>'
 " winresizer
 let g:winresizer_vert_resize=1
 let g:winresizer_horiz_resize=1
+
+" sneak
+let g:sneak#streak = 1
 
 " }}} Plugin options
 "

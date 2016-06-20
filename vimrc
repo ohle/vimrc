@@ -565,6 +565,7 @@ let g:winresizer_horiz_resize=1
 
 " sneak
 let g:sneak#streak = 1
+let g:sneak#map_netrw = 0
 
 " }}} Plugin options
 "

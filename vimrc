@@ -405,6 +405,9 @@ let s:browserpath = system("bash -c 'which google-chrome'")
 let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin', 'clojure', 'plantuml']
 " Plugin options {{{
 
+" netrw
+let g:netrw_altfile = 1
+
 " brolink
 let g:bl_no_mappings=1
 let g:bl_pagefiletypes = ['html', 'javascript', 'php', 'markdown']

@@ -1,4 +1,3 @@
-" An example for a vimrc file.
 " vim:foldmethod=marker ts=4
 "
 " Maintainer: Bram Moolenaar <Bram@vim.org>
@@ -14,6 +13,8 @@
 if v:progname =~? "evim"
   finish
 endif
+
+let g:python3_host_prog = '/usr/bin/python3.4'
 
 set sm "showmatch (Klammern)
 set aw "autowrite
@@ -115,14 +116,6 @@ set nrformats=hex " no octal, please
 set formatoptions+=j
 
 set clipboard=unnamed
-
-" Activate skim for pdfsync
-map ,v :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
-map ,p :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
-map ,m :w<CR>:silent !make <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
-" Reactivate VIM
-map ,r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
-map ,t :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
 
 " open URLs in chrome via <C-L>
 if has("mac")

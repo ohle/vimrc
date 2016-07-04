@@ -552,6 +552,30 @@ endif
 silent! exe 'tnoremap <silent>' . s:ctrlSpaceKey . ' <C-\><C-n>:CtrlSpace<CR>'
 silent! exe 'inoremap <silent>' . s:ctrlSpaceKey . ' <Esc>:CtrlSpace<CR>'
 
+" Change to tab called 'name'. If it doesn't exist, create it and then run the
+" commands passed as varargs.
+" If changeToInsertModes is truthy, changes to insert mode at the end.
+function! CreateOrChangeToTab(name, changeToInsertMode, ...)
+  let tabs=ctrlspace#api#TabList()
+  call filter(tabs, 'v:val.title ==? "' . a:name . '"')
+
+  if empty(tabs)
+      tabnew
+      for c in a:000
+          exe c
+      endfor
+      call ctrlspace#tabs#SetTabLabel(tabpagenr(), "terminal", 0)
+  else
+      let target = get(tabs, 0)
+      exe 'tabnext ' . target.index
+  endif
+  if a:changeToInsertMode
+      norm i
+  endif
+endfunction
+
+command Term call CreateOrChangeToTab("terminal", 1, "edit term://zsh")
+
 " winresizer
 let g:winresizer_vert_resize=1
 let g:winresizer_horiz_resize=1

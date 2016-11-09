@@ -182,14 +182,12 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'freitass/todo.txt-vim'
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
-    Plug 'klen/python-mode', { 'for': 'python' }
     Plug 'embear/vim-localvimrc'
     if has('mac')
         Plug 'rizzatti/dash.vim'
     endif
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    Plug 'klen/python-mode'
     Plug 'leafgarland/typescript-vim'
     Plug 'Quramy/tduquyomi'
     Plug 'tpope/vim-scriptease'
@@ -528,14 +526,6 @@ let g:neomake_makegcc_maker = {
 " grepper
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
-
-" python-mode
-" python-mode has some very invasive defaults...
-let g:pymode_folding = 0
-let g:pymode_options = 0
-let g:pymode_trim_whitespaces = 0
-let g:pymode_lint_checkers = ['pyflakes']
-let g:pymode_rope_goto_definition_bind = '<C-]>'
 
 " ctrl-space
 set hidden

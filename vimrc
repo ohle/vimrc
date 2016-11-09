@@ -203,6 +203,12 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'mustache/vim-mustache-handlebars'
     Plug 'tommcdo/vim-lion'
     Plug 'jimsei/winresizer'
+    Plug 'ryanss/vim-hackernews'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'mhartington/deoplete-typescript'
+    Plug 'zchee/deoplete-clang'
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    Plug 'zchee/deoplete-jedi'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -573,6 +579,9 @@ let g:winresizer_horiz_resize=1
 " sneak
 let g:sneak#streak = 1
 let g:sneak#map_netrw = 0
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " }}} Plugin options
 "

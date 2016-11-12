@@ -14,7 +14,8 @@ if v:progname =~? "evim"
   finish
 endif
 
-let g:python3_host_prog = '/usr/bin/python3.4'
+" system dependent settings
+runtime 'python_host.vim'
 
 set sm "showmatch (Klammern)
 set aw "autowrite

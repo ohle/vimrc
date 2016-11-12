@@ -6,3 +6,4 @@ local-settings.vim
 *~
 spell/
 tags
+python_host.vim

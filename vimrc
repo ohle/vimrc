@@ -1,4 +1,3 @@
-" An example for a vimrc file.
 " vim:foldmethod=marker ts=4
 "
 " Maintainer: Bram Moolenaar <Bram@vim.org>
@@ -14,6 +13,8 @@
 if v:progname =~? "evim"
   finish
 endif
+
+let g:python3_host_prog = '/usr/bin/python3.4'
 
 set sm "showmatch (Klammern)
 set aw "autowrite
@@ -116,14 +117,6 @@ set formatoptions+=j
 
 set clipboard=unnamed
 
-" Activate skim for pdfsync
-map ,v :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
-map ,p :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
-map ,m :w<CR>:silent !make <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR><CR>
-" Reactivate VIM
-map ,r :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
-map ,t :w<CR>:silent !pdflatex -synctex=1 --interaction=nonstopmode %:p <CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline -r <C-r>=line(".")<CR> %<.pdf %<CR>:silent !osascript -e "tell application \"MacVim\" to activate" <CR><CR>
-
 " open URLs in chrome via <C-L>
 if has("mac")
   nnoremap <C-L> yiW:!open <c-r>"&<cr>
@@ -163,7 +156,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
-    Plug 'junegunn/vim-easy-align'
     Plug 'kana/vim-textobj-lastpat'
     Plug 'kana/vim-textobj-user'
     Plug 'SirVer/ultisnips'
@@ -190,27 +182,33 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'freitass/todo.txt-vim'
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
-    Plug 'klen/python-mode', { 'for': 'python' }
     Plug 'embear/vim-localvimrc'
     if has('mac')
         Plug 'rizzatti/dash.vim'
     endif
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-    Plug 'klen/python-mode'
-    Plug 'clausreinke/typescript-tools.vim'
     Plug 'leafgarland/typescript-vim'
+    Plug 'Quramy/tduquyomi'
     Plug 'tpope/vim-scriptease'
     if exists('g:nyaovim_version')
         Plug 'rhysd/nyaovim-popup-tooltip'
         Plug 'rhysd/nyaovim-markdown-preview'
     endif
     Plug 'romainl/flattened'
-    Plug 'easymotion/vim-easymotion'
+    Plug 'justinmk/vim-sneak'
     Plug 'aklt/plantuml-syntax'
     Plug 'artur-shaik/vim-javacomplete2'
     Plug 'vim-ctrlspace/vim-ctrlspace'
     Plug 'mustache/vim-mustache-handlebars'
+    Plug 'tommcdo/vim-lion'
+    Plug 'jimsei/winresizer'
+    Plug 'ryanss/vim-hackernews'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'mhartington/deoplete-typescript'
+    Plug 'zchee/deoplete-clang'
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    Plug 'zchee/deoplete-jedi'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -359,10 +357,6 @@ endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-W>z :ZoomToggle<CR>
 
-" Easy-align
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga      <Plug>(EasyAlign)
-
 " grepper
 nmap gs <plug>Grepper
 vmap gs <plug>Grepper
@@ -407,6 +401,9 @@ let s:browserpath = system("bash -c 'which google-chrome'")
 
 let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin', 'clojure', 'plantuml']
 " Plugin options {{{
+
+" netrw
+let g:netrw_altfile = 1
 
 " brolink
 let g:bl_no_mappings=1
@@ -536,25 +533,6 @@ let g:neomake_makegcc_maker = {
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
 
-" python-mode
-" python-mode has some very invasive defaults...
-let g:pymode_folding = 0
-let g:pymode_options = 0
-let g:pymode_trim_whitespaces = 0
-let g:pymode_lint_checkers = ['pyflakes']
-let g:pymode_rope_goto_definition_bind = '<C-]>'
-
-" tsstools
-augroup tsstools
-    au!
-    au BufWritePost typescript :TSSupdate
-    au FileType typescript nnoremap <buffer> <Leader>s :TSSsymbol<cr>
-    au FileType typescript nnoremap <buffer> <Leader>t :TSStype<cr>
-    au FileType typescript nnoremap <buffer> <C-w>} :TSSdefpreview<cr>
-    au FileType typescript nnoremap <buffer> <C-]> :TSSdef<cr>
-augroup END
-
-
 " ctrl-space
 set hidden
 set showtabline=0
@@ -570,6 +548,41 @@ endif
 silent! exe 'nnoremap <silent>' . s:ctrlSpaceKey . ' :CtrlSpace<CR>'
 silent! exe 'tnoremap <silent>' . s:ctrlSpaceKey . ' <C-\><C-n>:CtrlSpace<CR>'
 silent! exe 'inoremap <silent>' . s:ctrlSpaceKey . ' <Esc>:CtrlSpace<CR>'
+
+" Change to tab called 'name'. If it doesn't exist, create it and then run the
+" commands passed as varargs.
+" If changeToInsertModes is truthy, changes to insert mode at the end.
+function! CreateOrChangeToTab(name, changeToInsertMode, ...)
+  let tabs=ctrlspace#api#TabList()
+  call filter(tabs, 'v:val.title ==? "' . a:name . '"')
+
+  if empty(tabs)
+      tabnew
+      for c in a:000
+          exe c
+      endfor
+      call ctrlspace#tabs#SetTabLabel(tabpagenr(), "terminal", 0)
+  else
+      let target = get(tabs, 0)
+      exe 'tabnext ' . target.index
+  endif
+  if a:changeToInsertMode
+      norm i
+  endif
+endfunction
+
+command Term call CreateOrChangeToTab("terminal", 1, "edit term://zsh")
+
+" winresizer
+let g:winresizer_vert_resize=1
+let g:winresizer_horiz_resize=1
+
+" sneak
+let g:sneak#streak = 1
+let g:sneak#map_netrw = 0
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
 
 " }}} Plugin options
 "

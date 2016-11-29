@@ -599,6 +599,10 @@ else
     let s:browse_cmd = 'xdg-open'
 endif
 
+if has('nvim')
+    set inccommand=split
+endif
+
 command BrowseBug call system(s:browse_cmd . ' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=' . expand('<cword>'))
 " command BrowseBug call system(s:browse_cmd . expand(' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=<cword>'))
 nnoremap gb :BrowseBug<cr>

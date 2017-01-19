@@ -406,12 +406,6 @@ let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java',
 " netrw
 let g:netrw_altfile = 1
 
-" brolink
-let g:bl_no_mappings=1
-let g:bl_pagefiletypes = ['html', 'javascript', 'php', 'markdown']
-vnoremap <silent><Leader> bj :BLEvaluateSelection<CR>
-nnoremap <silent><Leader> bj :BLEvaluateBuffer<CR>
-
 " UltiSnips
 " most terminals don't forward <c-tab>
 let g:UltiSnipsListSnippets = '<s-tab>'
@@ -588,7 +582,7 @@ let g:deoplete#enable_at_startup = 1
 " deoplete-clang
 if !has('mac')
     let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so.1'
-    let g:deoplete#sources#clang#clang_header='/usr/include/clang/3.3/include'
+    let g:deoplete#sources#clang#clang_header='/usr/include/clang'
 endif
 
 " }}} Plugin options

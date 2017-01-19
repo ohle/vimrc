@@ -200,7 +200,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'justinmk/vim-sneak'
     Plug 'aklt/plantuml-syntax'
     Plug 'artur-shaik/vim-javacomplete2'
-    Plug 'vim-ctrlspace/vim-ctrlspace'
     Plug 'mustache/vim-mustache-handlebars'
     Plug 'tommcdo/vim-lion'
     Plug 'jimsei/winresizer'
@@ -527,46 +526,6 @@ let g:neomake_makegcc_maker = {
 " grepper
 nmap gs  <plug>(GrepperOperator)
 xmap gs  <plug>(GrepperOperator)
-
-" ctrl-space
-set hidden
-set showtabline=0
-if executable("ag")
-    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-endif
-
-let s:ctrlSpaceKey = "<C-Space>"
-if !has("gui_running") && !has("win32") && !exists('g:nyaovim_version')
-    let s:ctrlSpaceKey = "<Nul>"
-endif
-
-silent! exe 'nnoremap <silent>' . s:ctrlSpaceKey . ' :CtrlSpace<CR>'
-silent! exe 'tnoremap <silent>' . s:ctrlSpaceKey . ' <C-\><C-n>:CtrlSpace<CR>'
-silent! exe 'inoremap <silent>' . s:ctrlSpaceKey . ' <Esc>:CtrlSpace<CR>'
-
-" Change to tab called 'name'. If it doesn't exist, create it and then run the
-" commands passed as varargs.
-" If changeToInsertModes is truthy, changes to insert mode at the end.
-function! CreateOrChangeToTab(name, changeToInsertMode, ...)
-  let tabs=ctrlspace#api#TabList()
-  call filter(tabs, 'v:val.title ==? "' . a:name . '"')
-
-  if empty(tabs)
-      tabnew
-      for c in a:000
-          exe c
-      endfor
-      call ctrlspace#tabs#SetTabLabel(tabpagenr(), "terminal", 0)
-  else
-      let target = get(tabs, 0)
-      exe 'tabnext ' . target.index
-  endif
-  if a:changeToInsertMode
-      norm i
-  endif
-endfunction
-
-command Term call CreateOrChangeToTab("terminal", 1, "edit term://zsh")
 
 " winresizer
 let g:winresizer_vert_resize=1

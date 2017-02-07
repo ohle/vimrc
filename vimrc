@@ -210,6 +210,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
     Plug 'zchee/deoplete-jedi'
     Plug 'Alok/notational-fzf-vim'
+    Plug 'davidhalter/jedi-vim'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -546,6 +547,11 @@ if !has('mac')
 endif
 
 let g:nv_directories = ['~/Dropbox/vimpad']
+
+" jedi
+" we use deoplete-jedi for completion
+let g:jedi#popup_on_dot = 0
+
 " }}} Plugin options
 "
 if has('mac')

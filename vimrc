@@ -209,6 +209,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'zchee/deoplete-clang'
     Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
     Plug 'zchee/deoplete-jedi'
+    Plug 'Alok/notational-fzf-vim'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -544,6 +545,7 @@ if !has('mac')
     let g:deoplete#sources#clang#clang_header='/usr/include/clang'
 endif
 
+let g:nv_directories = ['~/Dropbox/vimpad']
 " }}} Plugin options
 "
 if has('mac')

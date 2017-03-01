@@ -205,10 +205,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'jimsei/winresizer'
     Plug 'ryanss/vim-hackernews'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'mhartington/deoplete-typescript'
-    Plug 'zchee/deoplete-clang'
-    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-    Plug 'zchee/deoplete-jedi'
+    Plug 'autozimu/LanguageClient-neovim', { 'do': 'UpdateRemotePlugins' }
     Plug 'Alok/notational-fzf-vim'
     Plug 'davidhalter/jedi-vim'
 call plug#end() " }}}
@@ -540,17 +537,13 @@ let g:sneak#map_netrw = 0
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-" deoplete-clang
-if !has('mac')
-    let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so.1'
-    let g:deoplete#sources#clang#clang_header='/usr/include/clang'
-endif
-
+" NotationalVelocity
 let g:nv_directories = ['~/Dropbox/vimpad']
 
-" jedi
-" we use deoplete-jedi for completion
-let g:jedi#popup_on_dot = 0
+" LangueageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'python': [ '/usr/local/bin/pyls' ]
+    \}
 
 " }}} Plugin options
 "

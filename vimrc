@@ -199,7 +199,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'romainl/flattened'
     Plug 'justinmk/vim-sneak'
     Plug 'aklt/plantuml-syntax'
-    Plug 'artur-shaik/vim-javacomplete2'
     Plug 'mustache/vim-mustache-handlebars'
     Plug 'tommcdo/vim-lion'
     Plug 'jimsei/winresizer'
@@ -432,15 +431,6 @@ let g:projectionist_heuristics =
 
 " gundo
 nnoremap <leader>u :GundoToggle<CR>
-
-" javacomplete
-augroup javacomplete
-    au!
-    au FileType java setlocal omnifunc=javacomplete#Complete
-    au FileType java nnoremap <C-I> <Plug>(JavaComplete-Imports-AddMissing)
-augroup END
-
-" setlocal completefunc=javacomplete#CompleteParamsInfo
 
 " SLIME
 let g:slime_target = "tmux"

@@ -29,7 +29,7 @@ set backspace=indent,eol,start
 
 "keep backups
 set backup    " keep a backup file
-set backupdir=~/.vim/backupfiles
+set backupdir=~/.config/nvim/backupfiles
 " directory for swap files (default has highest priority for '.')
 set dir=~/tmp,/var/tmp,/tmp/,.
 

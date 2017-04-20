@@ -207,6 +207,8 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'autozimu/LanguageClient-neovim', { 'do': 'UpdateRemotePlugins' }
     Plug 'Alok/notational-fzf-vim'
     Plug 'davidhalter/jedi-vim'
+    Plug 'xolox/vim-misc'
+    Plug 'xolox/vim-lua-ftplugin'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -526,6 +528,7 @@ let g:sneak#map_netrw = 0
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {} " to be filled by other plugin options
 
 " NotationalVelocity
 let g:nv_directories = ['~/Dropbox/vimpad']
@@ -534,6 +537,13 @@ let g:nv_directories = ['~/Dropbox/vimpad']
 let g:LanguageClient_serverCommands = {
     \ 'python': [ '/usr/local/bin/pyls' ]
     \}
+
+" lua
+let g:lua_check_syntax = 0
+let g:lua_complete_omni = 1
+let g:lua_complete_dynamic = 0
+let g:lua_define_completion_mappings = 0
+let g:deoplete#omni#functions.lua = 'xolox#lua#omnifunc'
 
 " }}} Plugin options
 "

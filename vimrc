@@ -150,7 +150,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'tpope/vim-fugitive'
     Plug 'sjl/gundo.vim'
     Plug 'leshill/vim-json', { 'for': 'json' }
-    Plug 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
     Plug 'tpope/vim-markdown', { 'for': ['markdown', 'md', 'mkd'] }
     Plug 'tmhedberg/matchit'
     Plug 'tpope/vim-projectionist'
@@ -165,7 +164,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
     Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-    Plug 'fmoralesc/vim-pad', { 'on': 'Pad', 'branch': 'devel' }
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -202,7 +200,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'mustache/vim-mustache-handlebars'
     Plug 'tommcdo/vim-lion'
     Plug 'jimsei/winresizer'
-    Plug 'ryanss/vim-hackernews'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'autozimu/LanguageClient-neovim', { 'do': 'UpdateRemotePlugins' }
     Plug 'Alok/notational-fzf-vim'
@@ -276,6 +273,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 let &showbreak="↪ "
 if has('nvim')
   set breakindent
+  set guicursor=
 endif
 
 " MAPPINGS {{{

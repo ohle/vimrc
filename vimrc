@@ -206,6 +206,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'davidhalter/jedi-vim'
     Plug 'xolox/vim-misc'
     Plug 'xolox/vim-lua-ftplugin'
+    Plug 'wellle/targets.vim'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

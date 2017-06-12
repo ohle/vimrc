@@ -35,7 +35,12 @@ set dir=~/tmp,/var/tmp,/tmp/,.
 
 set history=50    " keep 50 lines of command line history
 set ruler         " show the cursor position all the time
-set scrolloff=1   " keep a line above/below when scrolling
+if exists("g:gui_oni")
+    set scrolloff=0 " workaround for ONI bug: https://github.com/extr0py/oni/issues/395
+else
+    set scrolloff=1   " keep a line above/below when scrolling
+endif
+
 set showcmd       " display incomplete commands
 set wildmenu      " completion in window
 set wildmode=longest,list,full " Tab-completion for filenames bash-style

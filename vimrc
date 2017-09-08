@@ -168,7 +168,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
     Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
-    Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
     Plug 'airblade/vim-gitgutter'
     Plug 'bling/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -183,17 +182,12 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'ohle/underscore-templates.vim'
     Plug 'groenewege/vim-less', { 'for': 'less' }
     Plug 'tpope/vim-eunuch'
-    Plug 'freitass/todo.txt-vim'
     Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
     Plug 'embear/vim-localvimrc'
-    if has('mac')
-        Plug 'rizzatti/dash.vim'
-    endif
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'leafgarland/typescript-vim'
-    Plug 'Quramy/tduquyomi'
     Plug 'tpope/vim-scriptease'
     if exists('g:nyaovim_version')
         Plug 'rhysd/nyaovim-popup-tooltip'
@@ -202,12 +196,10 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'romainl/flattened'
     Plug 'justinmk/vim-sneak'
     Plug 'aklt/plantuml-syntax'
-    Plug 'mustache/vim-mustache-handlebars'
     Plug 'tommcdo/vim-lion'
     Plug 'jimsei/winresizer'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'autozimu/LanguageClient-neovim', { 'do': 'UpdateRemotePlugins' }
-    Plug 'Alok/notational-fzf-vim'
     Plug 'davidhalter/jedi-vim'
     Plug 'xolox/vim-misc'
     Plug 'xolox/vim-lua-ftplugin'

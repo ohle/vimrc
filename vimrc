@@ -212,6 +212,8 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'xolox/vim-misc'
     Plug 'xolox/vim-lua-ftplugin'
     Plug 'wellle/targets.vim'
+    Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+    Plug 'tbabej/taskwiki'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

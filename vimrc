@@ -543,6 +543,10 @@ let g:lua_complete_dynamic = 0
 let g:lua_define_completion_mappings = 0
 let g:deoplete#omni#functions.lua = 'xolox#lua#omnifunc'
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+            \ 'syntax': 'markdown', 'ext': '.md'}]
+
 " }}} Plugin options
 "
 if has('mac')

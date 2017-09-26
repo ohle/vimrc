@@ -547,6 +547,12 @@ let g:deoplete#omni#functions.lua = 'xolox#lua#omnifunc'
 let g:vimwiki_list = [{'path': '~/vimwiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" fugitive
+" Recognize empty buffers
+autocmd BufWinEnter * if empty(expand('<afile>'))|call fugitive#detect(getcwd())|endif
+" Recognize directory buffers
+autocmd FileType netrw call fugitive#detect(@%)
+
 " }}} Plugin options
 "
 if has('mac')

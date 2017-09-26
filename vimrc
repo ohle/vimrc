@@ -164,7 +164,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'kana/vim-textobj-lastpat'
     Plug 'kana/vim-textobj-user'
     Plug 'SirVer/ultisnips'
-    Plug 'tpope/vim-vinegar'
+    Plug 'justinmk/vim-dirvish'
     Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
     Plug 'redacted/surface-evolver-vim', { 'for': 'evolver' }
     Plug 'lukerandall/haskellmode-vim', { 'for': 'haskell' }
@@ -552,6 +552,7 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 autocmd BufWinEnter * if empty(expand('<afile>'))|call fugitive#detect(getcwd())|endif
 " Recognize directory buffers
 autocmd FileType netrw call fugitive#detect(@%)
+autocmd FileType dirvish call fugitive#detect(@%)
 
 " }}} Plugin options
 "

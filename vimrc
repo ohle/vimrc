@@ -56,6 +56,8 @@ set hlsearch    " search highlighting
 set conceallevel=2
 "C-N to clear search highlighting
 nnoremap <silent> <C-N> :silent noh<CR>
+set number
+set relativenumber
 
 set noequalalways
 

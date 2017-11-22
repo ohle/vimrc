@@ -144,7 +144,6 @@ endfunction
 
 " Manage plugins with vimplug
 call plug#begin('~/.vim/bundle') " {{{
-    Plug 'bkad/CamelCaseMotion'
     Plug 'mhinz/vim-grepper'
     Plug 'tpope/vim-afterimage', { 'for': [ 'png', 'gif' ] }
     Plug 'tpope/vim-commentary'
@@ -209,6 +208,8 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
     Plug 'tbabej/taskwiki'
     Plug 'vim-scripts/MultipleSearch'
+    Plug 'xtal8/traces.vim'
+    Plug 'kopischke/vim-fetch'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

@@ -208,6 +208,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'wellle/targets.vim'
     Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
     Plug 'tbabej/taskwiki'
+    Plug 'vim-scripts/MultipleSearch'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

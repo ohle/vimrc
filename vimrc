@@ -210,6 +210,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'vim-scripts/MultipleSearch'
     Plug 'xtal8/traces.vim'
     Plug 'kopischke/vim-fetch'
+    Plug 'ohle/vmux'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256

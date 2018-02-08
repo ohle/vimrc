@@ -59,6 +59,8 @@ nnoremap <silent> <C-N> :silent noh<CR>
 set number
 set relativenumber
 
+au TermOpen * setlocal nonumber
+
 set noequalalways
 
 " Only do this part when compiled with support for autocommands.

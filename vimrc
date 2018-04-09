@@ -561,6 +561,7 @@ autocmd BufWinEnter * if empty(expand('<afile>'))|call fugitive#detect(getcwd())
 " Recognize directory buffers
 autocmd FileType netrw call fugitive#detect(@%)
 autocmd FileType dirvish call fugitive#detect(@%)
+command -nargs=* Glg Git! log --graph --pretty=format:'\%h - (\%ad)\%d \%s <\%an>' --abbrev-commit --date=local <args>
 
 " }}} Plugin options
 "

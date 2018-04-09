@@ -487,7 +487,7 @@ xmap <buffer> <silent> <M-s>          <Plug>(IPython-RunLinesAsTopLevel)
 " Neomake
 autocmd! BufWritePost * Neomake
 
-let g:neomake_python_enabled_makers = ['pyflakes']
+let g:neomake_python_enabled_makers = ['pyflakes', 'mypy']
 let g:neomake_sh_enabled_makers = ['shellcheck']
 let g:neomake_zsh_enabled_makers = ['shellcheck']
 let g:neomake_shellcheck_args = ['-fgcc'] " Workaround for https://github.com/neomake/neomake/issues/1777

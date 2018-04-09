@@ -34,5 +34,4 @@ function! CompleteMuttAliases(findstart, base)
 endfunction
 
 setlocal completefunc=CompleteMuttAliases
-set formatoptions+=aw
 normal gg}

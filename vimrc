@@ -407,6 +407,10 @@ let s:browserpath = system("bash -c 'which google-chrome'")
 let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'java', 'python', 'tex', 'moin', 'clojure', 'plantuml']
 " Plugin options {{{
 
+" ALE
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = 'i'
+
 " netrw
 let g:netrw_altfile = 1
 

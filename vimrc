@@ -185,7 +185,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'ohle/underscore-templates.vim'
     Plug 'groenewege/vim-less', { 'for': 'less' }
     Plug 'tpope/vim-eunuch'
-    Plug 'benekastah/neomake'
     Plug 'terryma/vim-expand-region'
     Plug 'embear/vim-localvimrc'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -213,6 +212,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'xtal8/traces.vim'
     Plug 'kopischke/vim-fetch'
     Plug 'ohle/vmux'
+    Plug 'w0rp/ale'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -483,42 +483,6 @@ map  <buffer> <silent> <C-s>          <Plug>(IPython-RunLine)
 imap <buffer> <silent> <C-s>          <C-o><Plug>(IPython-RunLine)
 xmap <buffer> <silent> <C-S>          <Plug>(IPython-RunLines)
 xmap <buffer> <silent> <M-s>          <Plug>(IPython-RunLinesAsTopLevel)
-
-" Neomake
-autocmd! BufWritePost * Neomake
-
-let g:neomake_python_enabled_makers = ['pyflakes', 'mypy']
-let g:neomake_sh_enabled_makers = ['shellcheck']
-let g:neomake_zsh_enabled_makers = ['shellcheck']
-let g:neomake_shellcheck_args = ['-fgcc'] " Workaround for https://github.com/neomake/neomake/issues/1777
-let g:neomake_latex_enabled_makers = ['lacheck']
-let g:neomake_tex_enabled_makers = ['lacheck']
-let g:neomake_typescript_enabled_makers = ['tsc']
-
-let g:neomake_makegcc_maker = {
-  \ 'exe': 'make',
-  \ 'buffer_output': 1,
-  \ 'errorformat': 
-    \ '%*[^\"]\"%f\"%*\\D%l:%c:\ %m,' .
-    \ '%*[^\"]\"%f\"%*\\D%l:\ %m,' .
-    \ '\"%f\"%*\\D%l:%c:\ %m,' .
-    \ '\"%f\"%*\\D%l:\ %m,' .
-    \ '%-G%f:%l:\ %trror:\ (Each\ undeclared\ identifier\ is\ reported\ only\ once,' .
-    \ '%-G%f:%l:\ %trror:\ for\ each\ function\ it\ appears\ in.),' .
-    \ '%f:%l:%c:\ %trror:\ %m,' .
-    \ '%f:%l:%c:\ %tarning:\ %m,' .
-    \ '%f:%l:%c:\ %m,' .
-    \ '%f:%l:\ %trror:\ %m,' .
-    \ '%f:%l:\ %tarning:\ %m,' .
-    \ '%f:%l:\ %m,' .
-    \ '\"%f\"\\,\ line\ %l%*\\D%c%*[^\ ]\ %m,' .
-    \ '%D%*\\a[%*\\d]:\ Entering\ directory\ [`'']%f'',' .
-    \ '%X%*\\a[%*\\d]:\ Leaving\ directory\ [`'']%f'',' .
-    \ '%D%*\\a:\ Entering\ directory\ [`'']%f'',' .
-    \ '%X%*\\a:\ Leaving\ directory\ [`'']%f'',' .
-    \ '%DMaking\ %*\\a\ in\ %f'
-    \}
-
 
 " grepper
 nmap gs  <plug>(GrepperOperator)

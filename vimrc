@@ -293,10 +293,6 @@ let maplocalleader = ","
 " Make Y behave like D and C
 noremap Y y$
 
-" Some regex sanity
-nnoremap / /\v
-nnoremap ? ?\v
-
 " shortcuts for dispatch.vim
 nnoremap <leader>D :Dispatch<cr>
 nnoremap <leader>S :Start<cr>

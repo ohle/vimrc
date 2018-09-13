@@ -564,6 +564,12 @@ let g:notmuch_folders = [
     \ ['', ''],
     \ ['archive', 'NOT tag:inbox']
     \]
+
+let g:notmuch_sendmail_method = 'sendmail'
+let g:notmuch_sendmail_param = {
+    \ 'location': '/usr/bin/msmtp',
+    \ 'arguments': '-C /home/claussen/.msmtprc'
+\}
 " }}}
 
 let $PAGER=''

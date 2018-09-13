@@ -59,7 +59,9 @@ nnoremap <silent> <C-N> :silent noh<CR>
 set number
 set relativenumber
 
-au TermOpen * setlocal nonumber
+if has('nvim')
+    au TermOpen * setlocal nonumber
+endif
 
 set noequalalways
 
@@ -160,7 +162,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'leshill/vim-json', { 'for': 'json' }
     Plug 'tpope/vim-markdown', { 'for': ['markdown', 'md', 'mkd'] }
     Plug 'tmhedberg/matchit'
-    Plug 'tpope/vim-projectionist'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-speeddating'
     Plug 'tpope/vim-surround'
@@ -200,8 +201,11 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'aklt/plantuml-syntax'
     Plug 'tommcdo/vim-lion'
     Plug 'jimsei/winresizer'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'autozimu/LanguageClient-neovim', { 'do': 'UpdateRemotePlugins' }
+    if has('nvim')
+        Plug 'tpope/vim-projectionist' " Projectionist seems to throw errors on normal vim
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+        Plug 'autozimu/LanguageClient-neovim', { 'do': 'UpdateRemotePlugins' }
+    endif
     Plug 'davidhalter/jedi-vim'
     Plug 'xolox/vim-misc'
     Plug 'xolox/vim-lua-ftplugin'

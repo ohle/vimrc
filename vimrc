@@ -158,7 +158,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
     Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
     Plug 'tpope/vim-fugitive'
-    Plug 'sjl/gundo.vim'
     Plug 'leshill/vim-json', { 'for': 'json' }
     Plug 'tpope/vim-markdown', { 'for': ['markdown', 'md', 'mkd'] }
     Plug 'tmhedberg/matchit'
@@ -211,7 +210,6 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'xolox/vim-lua-ftplugin'
     Plug 'wellle/targets.vim'
     Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-    Plug 'tbabej/taskwiki'
     Plug 'vim-scripts/MultipleSearch'
     Plug 'xtal8/traces.vim'
     Plug 'kopischke/vim-fetch'

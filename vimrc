@@ -215,6 +215,7 @@ call plug#begin('~/.vim/bundle') " {{{
     Plug 'kopischke/vim-fetch'
     Plug 'ohle/vmux'
     Plug 'w0rp/ale'
+    Plug 'imain/notmuch-vim'
 call plug#end() " }}}
 
 "let g:solarized_termcolors=256
@@ -545,6 +546,24 @@ command BrowseBug call system(s:browse_cmd . ' https://bugzilla.berlin.jpk.com/s
 " command BrowseBug call system(s:browse_cmd . expand(' https://bugzilla.berlin.jpk.com/show_bug.cgi?id=<cword>'))
 nnoremap gb :BrowseBug<cr>
 
+let g:notmuch_folders = [
+    \ [ 'inbox', 'tag:inbox' ],
+    \ [ 'unread', 'tag:unread' ],
+    \ ['release-request inbox', 'tag:release-request AND tag:inbox' ],
+    \ ['', '' ],
+    \ ['to-do', 'tag:todo' ],
+    \ ['', '' ],
+    \ ['redmine', 'tag:redmine' ],
+    \ ['git', 'tag:git' ],
+    \ ['', ''],
+    \ ['Referenz', 'tag:reference' ],
+    \ ['', ''],
+    \ ['Krankmeldungen', 'tag:krank'],
+    \ ['Urlaub', 'tag:urlaub'],
+    \ ['Home Office', 'tag:home-office'],
+    \ ['', ''],
+    \ ['archive', 'NOT tag:inbox']
+    \]
 " }}}
 
 let $PAGER=''
